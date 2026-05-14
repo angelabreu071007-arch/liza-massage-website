@@ -1,0 +1,1836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Art of Massage Therapy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:          #faf6f0;
+      --cream-dark:     #f2ebe0;
+      --cream-mid:      #e8ddd0;
+      --lavender-pale:  #ede8f8;
+      --lavender-light: #d5caf0;
+      --lavender:       #b3a3dc;
+      --lavender-mid:   #8b79c0;
+      --lavender-deep:  #5c4d96;
+      --lavender-dark:  #3a2d6e;
+      --rose:           #e8c5d4;
+      --rose-mid:       #d4a0b5;
+      --text:           #241b3a;
+      --text-light:     #7a6a90;
+      --white:          #fefcf8;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--lavender-pale); }
+    ::-webkit-scrollbar-thumb { background: var(--lavender); border-radius: 3px; }
+
+    /* ══════════════════════════════════════
+       NAV
+    ══════════════════════════════════════ */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 4rem;
+      height: 70px;
+      background: rgba(250, 246, 240, 0.93);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(179, 163, 220, 0.25);
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--lavender-dark);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 0.76rem;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      text-decoration: none;
+      transition: color 0.3s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px; left: 0;
+      width: 0; height: 1px;
+      background: var(--lavender-mid);
+      transition: width 0.3s;
+    }
+
+    .nav-links a:hover { color: var(--lavender-deep); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-links .btn-nav {
+      background: var(--lavender-deep);
+      color: #fff !important;
+      padding: 0.55rem 1.4rem;
+      border-radius: 30px;
+      letter-spacing: 0.1em;
+    }
+
+    .nav-links .btn-nav::after { display: none; }
+    .nav-links .btn-nav:hover { background: var(--lavender-dark) !important; color: var(--lavender-light) !important; }
+
+    .nav-toggle { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+    .nav-toggle span { width: 24px; height: 1.5px; background: var(--lavender-deep); display: block; }
+
+    /* ══════════════════════════════════════
+       HERO
+    ══════════════════════════════════════ */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-left {
+      background: linear-gradient(150deg, var(--lavender-dark) 0%, var(--lavender-deep) 60%, var(--lavender-mid) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 10rem 5rem 6rem 6rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Subtle circle ornaments */
+    .hero-left::before {
+      content: '';
+      position: absolute;
+      bottom: -80px; right: -80px;
+      width: 380px; height: 380px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(213, 202, 240, 0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-left::after {
+      content: '';
+      position: absolute;
+      top: 60px; left: -40px;
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      border: 1px solid rgba(213, 202, 240, 0.15);
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--lavender-light);
+      opacity: 0.8;
+      margin-bottom: 1.6rem;
+      animation: fadeUp 0.7s ease both;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 5vw, 5rem);
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--cream);
+      margin-bottom: 1.8rem;
+      animation: fadeUp 0.7s 0.12s ease both;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--lavender-light);
+      display: block;
+    }
+
+    .hero-sub {
+      font-size: 0.92rem;
+      font-weight: 300;
+      line-height: 1.9;
+      color: rgba(250, 246, 240, 0.6);
+      max-width: 360px;
+      margin-bottom: 3rem;
+      animation: fadeUp 0.7s 0.24s ease both;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      animation: fadeUp 0.7s 0.36s ease both;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--lavender-light);
+      color: var(--lavender-dark);
+      font-size: 0.76rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1rem 2.2rem;
+      border-radius: 30px;
+      transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    }
+
+    .btn-primary:hover {
+      background: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(91, 77, 150, 0.3);
+    }
+
+    .btn-outline-light {
+      display: inline-block;
+      border: 1px solid rgba(213, 202, 240, 0.4);
+      color: var(--cream);
+      font-size: 0.76rem;
+      font-weight: 300;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1rem 2rem;
+      border-radius: 30px;
+      transition: border-color 0.3s, color 0.3s;
+    }
+
+    .btn-outline-light:hover { border-color: var(--lavender-light); color: var(--lavender-light); }
+
+    /* Hero right — cream panel with promo card */
+    .hero-right {
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6rem 3.5rem;
+      position: relative;
+    }
+
+    .hero-right::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 70% 30%, rgba(179, 163, 220, 0.18) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 50% at 20% 80%, rgba(232, 197, 212, 0.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-right-stack {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 380px;
+      animation: fadeUp 0.8s 0.5s ease both;
+    }
+
+    .hero-promo-card {
+      background: var(--white);
+      border: 1px solid rgba(179, 163, 220, 0.3);
+      border-left: 3px solid var(--lavender-mid);
+      padding: 2rem 2.2rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 40px rgba(91, 77, 150, 0.08);
+    }
+
+    .promo-tag {
+      font-size: 0.66rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--lavender-mid);
+      margin-bottom: 0.5rem;
+    }
+
+    .promo-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem;
+      font-weight: 400;
+      color: var(--lavender-dark);
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-promo-card p {
+      font-size: 0.84rem;
+      font-weight: 300;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    .hero-tag-pill {
+      display: inline-block;
+      background: var(--lavender-pale);
+      border: 1px solid var(--lavender-light);
+      color: var(--lavender-deep);
+      font-size: 0.74rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      padding: 0.55rem 1.2rem;
+      border-radius: 30px;
+      font-style: italic;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+    }
+
+    /* hero social proof strip */
+    .hero-social-proof {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: var(--white);
+      border: 1px solid rgba(179, 163, 220, 0.25);
+      border-radius: 40px;
+      padding: 0.7rem 1.2rem;
+      width: fit-content;
+    }
+
+    .hero-avatars {
+      display: flex;
+    }
+
+    .hero-avatars img {
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      object-fit: cover;
+      margin-left: -8px;
+      background: var(--lavender-pale);
+    }
+
+    .hero-avatars img:first-child { margin-left: 0; }
+
+    .hero-proof-text {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .hero-proof-stars {
+      font-size: 0.65rem;
+      color: var(--lavender-mid);
+      letter-spacing: 1px;
+    }
+
+    .hero-proof-label {
+      font-size: 0.72rem;
+      font-weight: 400;
+      color: var(--text-light);
+      white-space: nowrap;
+    }
+
+    /* Liza spotlight between promos and policy */
+    .liza-spotlight {
+      background: var(--lavender-pale);
+      border-top: 1px solid rgba(179, 163, 220, 0.2);
+      border-bottom: 1px solid rgba(179, 163, 220, 0.2);
+      padding: 4rem 6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+    }
+
+    .liza-spotlight img {
+      width: 90px; height: 90px;
+      border-radius: 50%;
+      border: 3px solid var(--lavender-light);
+      object-fit: cover;
+      object-position: top;
+      flex-shrink: 0;
+    }
+
+    .liza-spotlight-text {
+      max-width: 560px;
+    }
+
+    .liza-spotlight-text p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--lavender-deep);
+      line-height: 1.6;
+      margin-bottom: 0.6rem;
+    }
+
+    .liza-spotlight-text span {
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--lavender-mid);
+    }
+
+    @media (max-width: 1024px) {
+      .liza-spotlight { padding: 3rem 2.5rem; }
+    }
+
+    @media (max-width: 640px) {
+      .liza-spotlight { flex-direction: column; text-align: center; padding: 3rem 1.5rem; }
+    }
+
+    /* ══════════════════════════════════════
+       INTRO BAR
+    ══════════════════════════════════════ */
+    .intro-bar {
+      background: var(--lavender-pale);
+      border-top: 1px solid rgba(179, 163, 220, 0.3);
+      border-bottom: 1px solid rgba(179, 163, 220, 0.3);
+      padding: 1.6rem 6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .intro-bar-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      color: var(--lavender-deep);
+    }
+
+    .intro-bar-item span {
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: var(--text-light);
+    }
+
+    .intro-bar-divider { width: 1px; height: 22px; background: rgba(179, 163, 220, 0.35); }
+
+    /* ══════════════════════════════════════
+       SERVICES SECTION
+    ══════════════════════════════════════ */
+    .services {
+      padding: 8rem 6rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      gap: 2rem;
+      margin-bottom: 4.5rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(179, 163, 220, 0.25);
+    }
+
+    .section-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--lavender-mid);
+      margin-bottom: 0.9rem;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.4rem, 3.5vw, 3.6rem);
+      font-weight: 300;
+      color: var(--lavender-dark);
+      line-height: 1.15;
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--lavender-mid);
+    }
+
+    .section-note {
+      font-size: 0.84rem;
+      font-weight: 300;
+      color: var(--text-light);
+      line-height: 1.75;
+      max-width: 240px;
+      text-align: right;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: var(--white);
+      border: 1px solid rgba(179, 163, 220, 0.2);
+      border-radius: 16px;
+      padding: 3rem 3rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s, border-color 0.4s;
+    }
+
+    .service-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      height: 3px; width: 0;
+      background: linear-gradient(90deg, var(--lavender-mid), var(--lavender-light));
+      border-radius: 0 0 16px 16px;
+      transition: width 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 60px rgba(91, 77, 150, 0.12);
+      border-color: rgba(179, 163, 220, 0.5);
+    }
+
+    .service-card:hover::after { width: 100%; }
+
+    .service-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.5rem;
+      font-weight: 300;
+      color: rgba(179, 163, 220, 0.2);
+      line-height: 1;
+      position: absolute;
+      top: 1.5rem; right: 2rem;
+      transition: color 0.4s;
+    }
+
+    .service-card:hover .service-number { color: rgba(179, 163, 220, 0.45); }
+
+    .service-tag {
+      display: inline-block;
+      font-size: 0.63rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--lavender-deep);
+      background: var(--lavender-pale);
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      margin-bottom: 1.2rem;
+    }
+
+    .service-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      color: var(--lavender-dark);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .service-desc {
+      font-size: 0.87rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--text-light);
+      margin-bottom: 2rem;
+      max-width: 340px;
+    }
+
+    .service-pricing {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .price-option {
+      background: var(--lavender-pale);
+      border: 1px solid rgba(179, 163, 220, 0.3);
+      padding: 0.65rem 1.2rem;
+      border-radius: 10px;
+      text-align: center;
+      transition: background 0.3s, border-color 0.3s;
+    }
+
+    .service-card:hover .price-option {
+      background: rgba(179, 163, 220, 0.2);
+      border-color: var(--lavender);
+    }
+
+    .price-duration {
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      color: var(--text-light);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .price-amount {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: var(--lavender-deep);
+      line-height: 1;
+    }
+
+    .service-includes {
+      font-size: 0.78rem;
+      font-weight: 300;
+      color: var(--rose-mid);
+      font-style: italic;
+    }
+
+    .service-book {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.73rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--lavender-deep);
+      text-decoration: none;
+      margin-top: 1.5rem;
+      transition: color 0.3s, gap 0.3s;
+    }
+
+    .service-book svg { transition: transform 0.3s; }
+    .service-book:hover { color: var(--lavender-mid); gap: 0.8rem; }
+    .service-book:hover svg { transform: translateX(3px); }
+
+    .service-img {
+      width: calc(100% + 6rem);
+      margin: 2rem -3rem -3rem;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      border-radius: 0 0 16px 16px;
+      transition: transform 0.5s ease;
+    }
+
+    .service-card:hover .service-img { transform: scale(1.03); }
+
+    .service-img-wrap {
+      overflow: hidden;
+      width: calc(100% + 6rem);
+      margin: 2rem -3rem -3rem;
+      border-radius: 0 0 16px 16px;
+    }
+
+    /* ══════════════════════════════════════
+       ABOUT ME
+    ══════════════════════════════════════ */
+    .about {
+      padding: 8rem 6rem;
+      background: var(--cream);
+    }
+
+    .about-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 7rem;
+      align-items: center;
+    }
+
+    .about-image-wrap {
+      position: relative;
+    }
+
+    .about-image-frame {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      background: var(--lavender-pale);
+    }
+
+    .about-image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+
+    /* decorative accent box behind image */
+    .about-image-wrap::before {
+      content: '';
+      position: absolute;
+      top: 24px; left: -24px;
+      width: 100%; height: 100%;
+      border: 2px solid rgba(179, 163, 220, 0.3);
+      border-radius: 20px;
+      z-index: 0;
+    }
+
+    .about-image-frame { position: relative; z-index: 1; }
+
+    .about-badge {
+      position: absolute;
+      bottom: -20px; right: -20px;
+      z-index: 2;
+      background: var(--lavender-deep);
+      color: #fff;
+      border-radius: 12px;
+      padding: 1.2rem 1.6rem;
+      text-align: center;
+      box-shadow: 0 8px 30px rgba(91, 77, 150, 0.25);
+    }
+
+    .about-badge-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem;
+      font-weight: 300;
+      line-height: 1;
+      color: var(--lavender-light);
+    }
+
+    .about-badge-label {
+      font-size: 0.68rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(213, 202, 240, 0.75);
+      margin-top: 0.25rem;
+    }
+
+    .about-content { }
+
+    .about-content .section-eyebrow { margin-bottom: 0.8rem; }
+
+    .about-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.4rem, 3vw, 3.4rem);
+      font-weight: 300;
+      color: var(--lavender-dark);
+      line-height: 1.1;
+      margin-bottom: 0.4rem;
+    }
+
+    .about-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--lavender-mid);
+      margin-bottom: 2rem;
+    }
+
+    .about-divider {
+      width: 50px; height: 2px;
+      background: linear-gradient(90deg, var(--lavender-mid), var(--lavender-light));
+      border-radius: 2px;
+      margin-bottom: 2rem;
+    }
+
+    .about-bio {
+      font-size: 0.93rem;
+      font-weight: 300;
+      line-height: 1.95;
+      color: var(--text-light);
+      margin-bottom: 1.4rem;
+    }
+
+    .about-philosophy {
+      background: var(--lavender-pale);
+      border-left: 3px solid var(--lavender-mid);
+      border-radius: 0 10px 10px 0;
+      padding: 1.4rem 1.8rem;
+      margin: 2rem 0;
+    }
+
+    .about-philosophy p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--lavender-deep);
+      line-height: 1.5;
+    }
+
+    .about-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 2rem;
+    }
+
+    .about-pill {
+      background: var(--white);
+      border: 1px solid rgba(179, 163, 220, 0.3);
+      color: var(--lavender-deep);
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      padding: 0.45rem 1rem;
+      border-radius: 20px;
+    }
+
+    @media (max-width: 1024px) {
+      .about { padding: 5rem 2.5rem; }
+      .about-inner { grid-template-columns: 1fr; gap: 4rem; }
+      .about-image-wrap { max-width: 380px; }
+      .about-image-wrap::before { display: none; }
+      .about-badge { bottom: 10px; right: 10px; }
+    }
+
+    @media (max-width: 640px) {
+      .about { padding: 4rem 1.5rem; }
+      .about-image-wrap { max-width: 100%; }
+    }
+
+    /* ══════════════════════════════════════
+       REVIEWS / TESTIMONIALS
+    ══════════════════════════════════════ */
+    .reviews {
+      background: var(--lavender-pale);
+      padding: 6rem 6rem;
+      border-top: 1px solid rgba(179, 163, 220, 0.25);
+      border-bottom: 1px solid rgba(179, 163, 220, 0.25);
+    }
+
+    .reviews-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .reviews-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .reviews-header .section-title { color: var(--lavender-dark); }
+
+    .stars {
+      display: flex;
+      justify-content: center;
+      gap: 4px;
+      margin-top: 0.8rem;
+    }
+
+    .star {
+      color: var(--lavender-mid);
+      font-size: 1.1rem;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
+    }
+
+    .review-card {
+      background: var(--white);
+      border: 1px solid rgba(179, 163, 220, 0.2);
+      border-radius: 12px;
+      padding: 1.8rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .review-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(91, 77, 150, 0.1);
+    }
+
+    .review-avatar {
+      width: 50px; height: 50px;
+      border-radius: 50%;
+      border: 2px solid var(--lavender-light);
+      object-fit: cover;
+      margin-bottom: 1rem;
+      background: var(--lavender-pale);
+    }
+
+    .review-stars {
+      display: flex;
+      gap: 2px;
+      margin-bottom: 0.8rem;
+    }
+
+    .review-stars span { color: #c9b0e8; font-size: 0.85rem; }
+
+    .review-text {
+      font-size: 0.84rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--text-light);
+      font-style: italic;
+    }
+
+    .review-name {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: var(--lavender-deep);
+      margin-top: 1rem;
+    }
+
+    /* ══════════════════════════════════════
+       PROMOTIONS
+    ══════════════════════════════════════ */
+    .promotions {
+      background: linear-gradient(135deg, var(--lavender-dark) 0%, var(--lavender-deep) 100%);
+      padding: 7rem 6rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .promotions::before {
+      content: '';
+      position: absolute;
+      top: -120px; right: -100px;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(213, 202, 240, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .promotions::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: 5%;
+      width: 350px; height: 350px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232, 197, 212, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .promotions-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .promotions .section-eyebrow { color: var(--lavender-light); }
+    .promotions .section-title { color: var(--cream); margin-bottom: 4rem; }
+    .promotions .section-title em { color: var(--lavender-light); }
+
+    .promos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .promo-card {
+      background: rgba(250, 246, 240, 0.06);
+      border: 1px solid rgba(213, 202, 240, 0.2);
+      border-radius: 16px;
+      padding: 2.8rem 2.4rem;
+      transition: background 0.4s, border-color 0.4s, transform 0.3s;
+    }
+
+    .promo-card:hover {
+      background: rgba(250, 246, 240, 0.1);
+      border-color: rgba(213, 202, 240, 0.45);
+      transform: translateY(-3px);
+    }
+
+    .promo-icon {
+      width: 46px; height: 46px;
+      background: rgba(213, 202, 240, 0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .promo-big {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.5rem;
+      font-weight: 300;
+      color: var(--lavender-light);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .promo-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 0.9rem;
+    }
+
+    .promo-desc {
+      font-size: 0.84rem;
+      font-weight: 300;
+      color: rgba(250, 246, 240, 0.55);
+      line-height: 1.85;
+    }
+
+    .promo-card-cta {
+      display: inline-block;
+      margin-top: 1.8rem;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--lavender-light);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(213, 202, 240, 0.35);
+      padding-bottom: 2px;
+      transition: border-color 0.3s, color 0.3s;
+    }
+
+    .promo-card-cta:hover { color: #fff; border-color: rgba(255,255,255,0.5); }
+
+    /* ══════════════════════════════════════
+       POLICY
+    ══════════════════════════════════════ */
+    .policy {
+      padding: 7rem 6rem;
+      background: var(--cream-dark);
+    }
+
+    .policy-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 6rem;
+      align-items: start;
+    }
+
+    .policy-left .section-title { margin-bottom: 1.4rem; }
+
+    .policy-left p {
+      font-size: 0.88rem;
+      font-weight: 300;
+      line-height: 1.9;
+      color: var(--text-light);
+      margin-bottom: 2rem;
+    }
+
+    .btn-lavender {
+      display: inline-block;
+      background: var(--lavender-deep);
+      color: #fff;
+      font-size: 0.76rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1rem 2.2rem;
+      border-radius: 30px;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .btn-lavender:hover { background: var(--lavender-dark); transform: translateY(-2px); }
+
+    .policy-items {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .policy-item {
+      background: var(--white);
+      padding: 1.8rem 2rem;
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      gap: 1.2rem;
+      align-items: start;
+      transition: background 0.3s;
+      border-radius: 10px;
+      margin-bottom: 0.6rem;
+    }
+
+    .policy-item:hover { background: var(--lavender-pale); }
+
+    .policy-item-icon {
+      width: 40px; height: 40px;
+      background: var(--lavender-pale);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .policy-item-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--lavender-dark);
+      margin-bottom: 0.35rem;
+    }
+
+    .policy-item-text {
+      font-size: 0.84rem;
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--text-light);
+    }
+
+    /* ══════════════════════════════════════
+       CTA STRIP
+    ══════════════════════════════════════ */
+    .cta-strip {
+      background: var(--lavender-light);
+      padding: 3.5rem 6rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .cta-strip-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 300;
+      color: var(--lavender-dark);
+      line-height: 1.2;
+    }
+
+    .cta-strip-text em { font-style: italic; }
+
+    .btn-deep {
+      display: inline-block;
+      background: var(--lavender-dark);
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1.1rem 2.8rem;
+      border-radius: 30px;
+      white-space: nowrap;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .btn-deep:hover { background: var(--lavender-deep); transform: translateY(-2px); }
+
+    /* ══════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════ */
+    footer {
+      background: var(--lavender-dark);
+      color: var(--cream);
+      padding: 4rem 6rem 2.5rem;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 4rem;
+      margin-bottom: 3.5rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(213, 202, 240, 0.12);
+    }
+
+    .footer-brand-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+      color: var(--cream);
+    }
+
+    .footer-tagline {
+      font-size: 0.82rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: rgba(250, 246, 240, 0.45);
+      max-width: 260px;
+      margin-bottom: 2rem;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 0.8rem;
+    }
+
+    .footer-social a {
+      width: 36px; height: 36px;
+      background: rgba(213, 202, 240, 0.08);
+      border: 1px solid rgba(213, 202, 240, 0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(250, 246, 240, 0.55);
+      text-decoration: none;
+      transition: background 0.3s, border-color 0.3s, color 0.3s;
+    }
+
+    .footer-social a:hover {
+      background: rgba(179, 163, 220, 0.25);
+      border-color: var(--lavender);
+      color: var(--lavender-light);
+    }
+
+    .footer-col-title {
+      font-size: 0.66rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--lavender);
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .footer-links a {
+      font-size: 0.83rem;
+      font-weight: 300;
+      color: rgba(250, 246, 240, 0.5);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover { color: var(--lavender-light); }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-bottom p {
+      font-size: 0.73rem;
+      font-weight: 300;
+      color: rgba(250, 246, 240, 0.28);
+    }
+
+    /* ══════════════════════════════════════
+       ANIMATIONS
+    ══════════════════════════════════════ */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ══════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      nav { padding: 0 2rem; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-left { padding: 9rem 2.5rem 4rem; min-height: 80vh; }
+      .hero-right { padding: 4rem 2.5rem; }
+      .services { padding: 5rem 2.5rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .section-header { grid-template-columns: 1fr; }
+      .section-note { text-align: left; max-width: none; }
+      .reviews { padding: 5rem 2.5rem; }
+      .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+      .promotions { padding: 5rem 2.5rem; }
+      .promos-grid { grid-template-columns: 1fr; }
+      .policy { padding: 5rem 2.5rem; }
+      .policy-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .cta-strip { padding: 3rem 2.5rem; flex-direction: column; align-items: flex-start; }
+      footer { padding: 3rem 2.5rem 2rem; }
+      .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+      .intro-bar { padding: 1.5rem 2.5rem; gap: 1.5rem; }
+      .intro-bar-divider { display: none; }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .nav-toggle { display: flex; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 70px; left: 0; right: 0;
+        background: var(--cream);
+        padding: 2rem;
+        gap: 1.5rem;
+        border-bottom: 1px solid rgba(179, 163, 220, 0.25);
+        z-index: 99;
+      }
+      .hero-left { padding: 7rem 1.5rem 4rem; }
+      .services { padding: 4rem 1.5rem; }
+      .service-card { padding: 2rem 1.5rem; }
+      .reviews { padding: 4rem 1.5rem; }
+      .reviews-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
+      .promotions { padding: 4rem 1.5rem; }
+      .policy { padding: 4rem 1.5rem; }
+      .cta-strip { padding: 2.5rem 1.5rem; }
+      footer { padding: 2.5rem 1.5rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVIGATION ── -->
+  <nav>
+    <a class="nav-logo" href="#">The Art of Massage Therapy</a>
+    <button class="nav-toggle" aria-label="Toggle menu" onclick="this.nextElementSibling.classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#">New Location</a></li>
+      <li><a href="https://pocketsuite.io/link/liza-abreu" class="btn-nav">Book Here</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="hero-left">
+      <p class="hero-eyebrow">Healing · Restoration · Balance</p>
+      <h1 class="hero-title">
+        The Art of<br>
+        <em>Massage Therapy</em>
+      </h1>
+      <p class="hero-sub">
+        Tailored therapeutic experiences designed to restore your body, quiet your mind, and renew your spirit.
+      </p>
+      <div class="hero-cta">
+        <a href="https://pocketsuite.io/link/liza-abreu" class="btn-primary">Book Your Session</a>
+        <a href="#services" class="btn-outline-light">View Services</a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-right-stack">
+        <div class="hero-tag-pill">New clients always welcome ✦</div>
+        <div class="hero-promo-card">
+          <p class="promo-tag">Introductory Offer</p>
+          <div class="promo-headline">20% OFF<br>Your First Visit</div>
+          <p>Experience any signature treatment at a special introductory rate. Just mention it at booking — no code needed.</p>
+        </div>
+        <div class="hero-social-proof">
+          <div class="hero-avatars">
+            <img src="https://lh3.googleusercontent.com/EWqW7DEY4kOTRMLjK2-ObFHp-EYBt5apFYZ1LVFAhLtTLjigCRfx5hCCTKbIjIm68VQ00p9twloHJ9w8=s50" alt="Happy client" />
+            <img src="https://lh3.googleusercontent.com/TgRyMQvJ3_h9RmOnu7AlhIE7NLOOBsRoBounARrs8fQv8HCRPaFtpBneSqJOSZpI6l7He_bAZKN179JBig=s50" alt="Happy client" />
+            <img src="https://lh3.googleusercontent.com/43-pXHjwrpmVO8Oean-6BD0uzARvcqUQrpdi7Yw2bxaXwEoP21UdN5kW6Ks9pdOxf7ropMUrh0djgYPwYPU=s50" alt="Happy client" />
+            <img src="https://lh3.googleusercontent.com/9rwgVnDglPdPFugSu98fhDmxzjXC9KovZ_7BuHkXPIv6jvg9S96flGnhL_e4y8mIpPpZQstfqEV-WitY=s50" alt="Happy client" />
+          </div>
+          <div class="hero-proof-text">
+            <span class="hero-proof-stars">★★★★★</span>
+            <span class="hero-proof-label">Loved by our clients</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── INTRO BAR ── -->
+  <div class="intro-bar">
+    <div class="intro-bar-item">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      </svg>
+      <span>Licensed &amp; Certified Therapist</span>
+    </div>
+    <div class="intro-bar-divider"></div>
+    <div class="intro-bar-item">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+      </svg>
+      <span>Flexible Session Lengths</span>
+    </div>
+    <div class="intro-bar-divider"></div>
+    <div class="intro-bar-item">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+      </svg>
+      <span>Personalized to You</span>
+    </div>
+    <div class="intro-bar-divider"></div>
+    <div class="intro-bar-item">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+      </svg>
+      <span>Prenatal Specialists</span>
+    </div>
+  </div>
+
+  <!-- ── SERVICES ── -->
+  <section class="services" id="services">
+    <div class="section-header reveal">
+      <div>
+        <p class="section-eyebrow">Our Treatments</p>
+        <h2 class="section-title">Signature <em>Services</em></h2>
+      </div>
+      <p class="section-note">Each session is thoughtfully tailored to your body's unique needs.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card reveal">
+        <span class="service-number">01</span>
+        <span class="service-tag">Swedish · Relaxation</span>
+        <h3 class="service-name">Heart &amp; Soul</h3>
+        <p class="service-desc">
+          The perfect introduction to therapeutic massage. A Swedish-style treatment with light to firm pressure that melts away tension — ideal for first-time clients.
+        </p>
+        <div class="service-pricing">
+          <div class="price-option">
+            <span class="price-duration">60 min</span>
+            <span class="price-amount">$150</span>
+          </div>
+          <div class="price-option">
+            <span class="price-duration">90 min</span>
+            <span class="price-amount">$210</span>
+          </div>
+        </div>
+        <p class="service-includes">✦ 90-min includes facial treatment</p>
+        <a href="https://pocketsuite.io/link/liza-abreu" class="service-book">
+          Book this session
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <div class="service-img-wrap">
+          <img class="service-img" src="https://lh3.googleusercontent.com/3_M3E4gm1UQpcF5b_TP22LfKoXBZ7MPaBPRrPbs9fMATy8YZqCpqL3uph_CJpcx-ioLLjT-2pQ3Y4j5a60d9VeX0fbFyY_aIYKfAT2Dc-S8qHTbHwCRq-g" alt="Heart & Soul massage" />
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <span class="service-number">02</span>
+        <span class="service-tag">Stone Therapy · Deep Relief</span>
+        <h3 class="service-name">Healing Stones</h3>
+        <p class="service-desc">
+          Contrast stone therapy using alternating hot and cold stones to penetrate deep muscular tissue. Firm pressure combined with thermal therapy accelerates healing.
+        </p>
+        <div class="service-pricing">
+          <div class="price-option">
+            <span class="price-duration">90 min</span>
+            <span class="price-amount">$210</span>
+          </div>
+        </div>
+        <p class="service-includes">✦ Hot &amp; cold stone contrast therapy</p>
+        <a href="https://pocketsuite.io/link/liza-abreu" class="service-book">
+          Book this session
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <div class="service-img-wrap">
+          <img class="service-img" src="https://lh3.googleusercontent.com/KvNIYypiMW5cstZk6nJKgycUJNQLm2hlFClWhsWnjUbsagzWR7cifidRof1oB4VlW6BAYPve_VxtAt_31JFt2pfbX6G3RGHaD6LWNjC1IvzhNWFlJ7YLhA" alt="Healing Stones massage" />
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <span class="service-number">03</span>
+        <span class="service-tag">Deep Tissue · Cupping</span>
+        <h3 class="service-name">Restorative</h3>
+        <p class="service-desc">
+          Fully customizable deep tissue work addressing your specific concerns. Incorporates cupping and bamboo tools for comprehensive muscular restoration and pain relief.
+        </p>
+        <div class="service-pricing">
+          <div class="price-option">
+            <span class="price-duration">60 min</span>
+            <span class="price-amount">$168</span>
+          </div>
+          <div class="price-option">
+            <span class="price-duration">90 min</span>
+            <span class="price-amount">$228</span>
+          </div>
+        </div>
+        <p class="service-includes">✦ 90-min includes cupping &amp; bamboo tools</p>
+        <a href="https://pocketsuite.io/link/liza-abreu" class="service-book">
+          Book this session
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <div class="service-img-wrap">
+          <img class="service-img" src="https://lh3.googleusercontent.com/mkSwmozoxEPFYW--iICNl1CkGzd1FlhC8cguCAhyTxOjUWzCMdWBc7a5j7FwUsmcEqnAd_Dm8vp7gNB0DzHRAFdoLH0Ts_YNS2vm1CsyzYhQKXJeImLptw" alt="Restorative bamboo massage" />
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <span class="service-number">04</span>
+        <span class="service-tag">Prenatal · Nurturing</span>
+        <h3 class="service-name">Prenatal Bliss</h3>
+        <p class="service-desc">
+          A specialized pregnancy massage providing safe, nurturing relief. Focuses on the shoulders, lower back, and hips — the areas that carry the most stress during pregnancy.
+        </p>
+        <div class="service-pricing">
+          <div class="price-option">
+            <span class="price-duration">75 min</span>
+            <span class="price-amount">$198</span>
+          </div>
+        </div>
+        <p class="service-includes">✦ Includes luxurious foot scrub</p>
+        <a href="https://pocketsuite.io/link/liza-abreu" class="service-book">
+          Book this session
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <div class="service-img-wrap">
+          <img class="service-img" src="https://lh3.googleusercontent.com/nhHSSTpeQ8IJC3QIkae3N5KX2ox2b8-2jyR_o6BdYTWlmPn5OCdpDj-89eMfCxYrjmO7kXzNG1tyGJEvlDKv6y23oez6qRC0ntI66P3n64upm_426nA-Ggo" alt="Prenatal Bliss massage" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── ABOUT ME ── -->
+  <section class="about" id="about">
+    <div class="about-inner">
+
+      <div class="about-image-wrap reveal">
+        <div class="about-image-frame">
+          <img
+            src="https://lh3.googleusercontent.com/bw-cEtbLwyxs61Ktx62wOkQwghGL_J05o_fqeTkbe97GdBAQ6oiKqYtLZ9JtDFjH8L_HSAEgeNnERVJvH3NIX7zIm80dMD65-MrJz4KQDVrOuEr7i60WGQ"
+            alt="Liza Abreu — Licensed Massage Therapist"
+            onerror="this.style.display='none'" />
+        </div>
+        <div class="about-badge">
+          <div class="about-badge-num">23+</div>
+          <div class="about-badge-label">Years of<br>Experience</div>
+        </div>
+      </div>
+
+      <div class="about-content reveal">
+        <p class="section-eyebrow">Meet Your Therapist</p>
+        <h2 class="about-name">Liza Abreu</h2>
+        <p class="about-title">Licensed Massage Therapist</p>
+        <div class="about-divider"></div>
+
+        <p class="about-bio">
+          With over 23 years of experience, Liza began her journey in the heart of Miami, Florida — refining her craft at some of the most prestigious luxury hotels on Miami Beach. That foundation of excellence, care, and attention to detail is something she brings to every single session.
+        </p>
+        <p class="about-bio">
+          Liza specializes in spa rituals designed for the mind, body &amp; soul — from targeted chronic area work and full body muscular tension relief to deep stress reduction treatments. Whether you're seeking relaxation, rehabilitation, or simply a moment of peace, Liza tailors every session specifically to you.
+        </p>
+
+        <div class="about-philosophy">
+          <p>"Everyone deserves to be Pampered!"</p>
+        </div>
+
+        <p class="about-bio">
+          Her commitment is simple: to provide professional, personalized care in a warm, cozy, and safe environment where you always leave feeling better than when you arrived.
+        </p>
+
+        <div class="about-pills">
+          <span class="about-pill">Swedish Massage</span>
+          <span class="about-pill">Deep Tissue</span>
+          <span class="about-pill">Hot &amp; Cold Stone Therapy</span>
+          <span class="about-pill">Cupping</span>
+          <span class="about-pill">Prenatal Massage</span>
+          <span class="about-pill">Aromatherapy</span>
+          <span class="about-pill">Stress Reduction</span>
+          <span class="about-pill">Bamboo Massage</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── REVIEWS (original site images) ── -->
+  <section class="reviews">
+    <div class="reviews-inner">
+      <div class="reviews-header reveal">
+        <p class="section-eyebrow" style="text-align:center;">Client Reviews</p>
+        <h2 class="section-title" style="text-align:center;">What Our Guests <em>Say</em></h2>
+        <div class="stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+      </div>
+
+      <div class="reviews-grid">
+
+        <div class="review-card reveal">
+          <img class="review-avatar"
+            src="https://lh3.googleusercontent.com/bw-cEtbLwyxs61Ktx62wOkQwghGL_J05o_fqeTkbe97GdBAQ6oiKqYtLZ9JtDFjH8L_HSAEgeNnERVJvH3NIX7zIm80dMD65-MrJz4KQDVrOuEr7i60WGQ"
+            alt="Reviewer"
+            onerror="this.style.background='var(--lavender-pale)';this.removeAttribute('src')" />
+          <div class="review-stars">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+          <p class="review-text">"Absolutely incredible experience. I left feeling completely renewed — the best massage I've ever had."</p>
+          <p class="review-name">Google Review</p>
+        </div>
+
+        <div class="review-card reveal">
+          <img class="review-avatar"
+            src="https://lh3.googleusercontent.com/EWqW7DEY4kOTRMLjK2-ObFHp-EYBt5apFYZ1LVFAhLtTLjigCRfx5hCCTKbIjIm68VQ00p9twloHJ9w8=s50"
+            alt="Reviewer"
+            onerror="this.style.background='var(--lavender-pale)';this.removeAttribute('src')" />
+          <div class="review-stars">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+          <p class="review-text">"The Healing Stones session was transformative. My chronic back pain finally has relief. Highly recommend!"</p>
+          <p class="review-name">Google Review</p>
+        </div>
+
+        <div class="review-card reveal">
+          <img class="review-avatar"
+            src="https://lh3.googleusercontent.com/TgRyMQvJ3_h9RmOnu7AlhIE7NLOOBsRoBounARrs8fQv8HCRPaFtpBneSqJOSZpI6l7He_bAZKN179JBig=s50"
+            alt="Reviewer"
+            onerror="this.style.background='var(--lavender-pale)';this.removeAttribute('src')" />
+          <div class="review-stars">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+          <p class="review-text">"As a prenatal client, I felt so safe and cared for. The Prenatal Bliss session was exactly what I needed."</p>
+          <p class="review-name">Google Review</p>
+        </div>
+
+        <div class="review-card reveal">
+          <img class="review-avatar"
+            src="https://lh3.googleusercontent.com/43-pXHjwrpmVO8Oean-6BD0uzARvcqUQrpdi7Yw2bxaXwEoP21UdN5kW6Ks9pdOxf7ropMUrh0djgYPwYPU=s50"
+            alt="Reviewer"
+            onerror="this.style.background='var(--lavender-pale)';this.removeAttribute('src')" />
+          <div class="review-stars">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+          <p class="review-text">"I've been coming for months and every session is perfect. The loyalty card keeps me coming back — worth every penny."</p>
+          <p class="review-name">Google Review</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROMOTIONS ── -->
+  <section class="promotions">
+    <div class="promotions-inner">
+      <p class="section-eyebrow">Offers &amp; Rewards</p>
+      <h2 class="section-title">More Reasons to <em>Return</em></h2>
+      <div class="promos-grid">
+
+        <div class="promo-card reveal">
+          <div class="promo-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d5caf0" stroke-width="1.5">
+              <path d="M20 12V22H4V12"/><path d="M22 7H2v5h20V7z"/>
+              <path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+              <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+            </svg>
+          </div>
+          <div class="promo-big">20%</div>
+          <div class="promo-title">New Client Welcome</div>
+          <p class="promo-desc">First-time guests receive 20% off any introductory massage. Simply mention it when booking — no coupon needed.</p>
+          <a href="#" class="promo-card-cta">Book your first session →</a>
+        </div>
+
+        <div class="promo-card reveal">
+          <div class="promo-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d5caf0" stroke-width="1.5">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </div>
+          <div class="promo-big">50%</div>
+          <div class="promo-title">Loyalty Reward Card</div>
+          <p class="promo-desc">Your 6th massage is at half price. Our loyalty card rewards your commitment to self-care with meaningful savings.</p>
+          <a href="#" class="promo-card-cta">Start earning today →</a>
+        </div>
+
+        <div class="promo-card reveal">
+          <div class="promo-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d5caf0" stroke-width="1.5">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <div class="promo-big">Free</div>
+          <div class="promo-title">Referral Program</div>
+          <p class="promo-desc">Refer 3 friends and receive a complimentary 60-minute aromatherapy massage — our thank you for sharing the gift of healing.</p>
+          <a href="#" class="promo-card-cta">Learn more →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LIZA SPOTLIGHT (between promos & policy, mirroring original services page) ── -->
+  <div class="liza-spotlight">
+    <img
+      src="https://lh3.googleusercontent.com/bw-cEtbLwyxs61Ktx62wOkQwghGL_J05o_fqeTkbe97GdBAQ6oiKqYtLZ9JtDFjH8L_HSAEgeNnERVJvH3NIX7zIm80dMD65-MrJz4KQDVrOuEr7i60WGQ"
+      alt="Liza Abreu — Licensed Massage Therapist"
+      onerror="this.style.display='none'" />
+    <div class="liza-spotlight-text">
+      <p>"Everyone deserves to be Pampered! I'm committed to providing professional care in a cozy, safe environment."</p>
+      <span>— Liza Abreu, Licensed Massage Therapist · 23+ Years Experience</span>
+    </div>
+  </div>
+
+  <!-- ── POLICY ── -->
+  <section class="policy">
+    <div class="policy-inner">
+      <div class="policy-left reveal">
+        <p class="section-eyebrow">Booking Information</p>
+        <h2 class="section-title">What to<br><em>Expect</em></h2>
+        <p>A few simple policies help us ensure every client receives the full, unhurried care they deserve.</p>
+        <a href="https://pocketsuite.io/link/liza-abreu" class="btn-lavender">Reserve Your Session</a>
+      </div>
+
+      <div class="policy-items reveal">
+        <div class="policy-item">
+          <div class="policy-item-icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#8b79c0" stroke-width="1.5">
+              <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+          </div>
+          <div>
+            <p class="policy-item-title">24-Hour Cancellation Notice</p>
+            <p class="policy-item-text">Please cancel or reschedule at least 24 hours before your appointment so we can offer your slot to another client.</p>
+          </div>
+        </div>
+
+        <div class="policy-item">
+          <div class="policy-item-icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#8b79c0" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/>
+              <line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+          </div>
+          <div>
+            <p class="policy-item-title">$25 Late Cancellation Fee</p>
+            <p class="policy-item-text">Cancellations with less than 24 hours notice or missed appointments will incur a $25 fee. We appreciate your respect for our therapists' time.</p>
+          </div>
+        </div>
+
+        <div class="policy-item">
+          <div class="policy-item-icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#8b79c0" stroke-width="1.5">
+              <rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/>
+            </svg>
+          </div>
+          <div>
+            <p class="policy-item-title">Credit Card Required for Booking</p>
+            <p class="policy-item-text">A valid credit card holds your reservation. Your card will not be charged until the time of your session.</p>
+          </div>
+        </div>
+
+        <div class="policy-item">
+          <div class="policy-item-icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#8b79c0" stroke-width="1.5">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <div>
+            <p class="policy-item-title">Your Comfort Is Our Priority</p>
+            <p class="policy-item-text">All sessions are fully customizable. Please share your pressure preferences and any health concerns before your appointment.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA STRIP ── -->
+  <div class="cta-strip">
+    <p class="cta-strip-text">Ready to <em>feel the difference?</em><br>Your healing starts here.</p>
+    <a href="https://pocketsuite.io/link/liza-abreu" class="btn-deep">Book Your Session Now</a>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-top">
+      <div>
+        <p class="footer-brand-name">The Art of Massage Therapy</p>
+        <p class="footer-tagline">Dedicated to your healing, restoration, and wellbeing. Every session, every touch, thoughtfully yours.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="TikTok">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.72a4.85 4.85 0 0 1-1.01-.03z" opacity="0.85"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="Yelp">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" opacity="0.75">
+              <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12.017 24c6.624 0 11.99-5.367 11.99-11.988C24.006 5.367 18.641.001 12.017.001z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Navigate</p>
+        <ul class="footer-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">About Me</a></li>
+          <li><a href="#">New Location</a></li>
+          <li><a href="#">Book Now</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Services</p>
+        <ul class="footer-links">
+          <li><a href="#">Heart &amp; Soul</a></li>
+          <li><a href="#">Healing Stones</a></li>
+          <li><a href="#">Restorative</a></li>
+          <li><a href="#">Prenatal Bliss</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 The Art of Massage Therapy. All rights reserved.</p>
+      <p>massagetherapy4stress.com</p>
+    </div>
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 90);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
