@@ -6,28 +6,26 @@
   <title>The Art of Massage Therapy — Liza Abreu</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Gilda+Display&family=Great+Vibes&family=The+Seasons&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --cream:         #faf6f0;
-      --cream-dark:    #f2ebe0;
-      --lavender-pale: #ede8f8;
-      --lavender-light:#d5caf0;
-      --lavender:      #b3a3dc;
-      --lavender-mid:  #8b79c0;
-      --lavender-deep: #5c4d96;
-      --lavender-dark: #3a2d6e;
-      --rose:          #e8c5d4;
-      --rose-mid:      #d4a0b5;
-      --text:          #241b3a;
-      --text-light:    #7a6a90;
-      --white:         #fefcf8;
+      --cream:         #F7F3EB;
+      --cream-dark:    #E6DDD4;
+      --lavender-pale: #DAD2E1;
+      --lavender-light:#CCC4D9;
+      --lavender:      #9F86AA;
+      --lavender-mid:  #8A7598;
+      --lavender-deep: #6B5578;
+      --lavender-dark: #3D2D45;
+      --text:          #2D1F1F;
+      --text-light:    #786560;
+      --white:         #FEFCF8;
     }
 
     html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
+    body { font-family: 'Gilda Display', serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
 
     ::-webkit-scrollbar { width: 5px; }
     ::-webkit-scrollbar-track { background: var(--lavender-pale); }
@@ -38,13 +36,12 @@
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
       padding: 0 4rem; height: 70px;
-      background: rgba(250,246,240,0.93); backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(179,163,220,0.2);
+      background: rgba(247,243,235,0.93); backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(159,134,170,0.2);
     }
     .nav-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem; font-weight: 500; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--lavender-dark); text-decoration: none;
+      display: flex; align-items: center;
+      text-decoration: none; color: var(--lavender-deep); height: 48px;
     }
     .nav-links { display: flex; list-style: none; gap: 2.5rem; align-items: center; }
     .nav-links a {
@@ -58,9 +55,9 @@
     }
     .nav-links a:hover { color: var(--lavender-deep); }
     .nav-links a:hover::after { width: 100%; }
-    .btn-nav { background: var(--lavender-deep) !important; color: #fff !important; padding: 0.55rem 1.4rem; border-radius: 30px; }
+    .btn-nav { background: var(--lavender) !important; color: #fff !important; padding: 0.55rem 1.4rem; border-radius: 50px; }
     .btn-nav::after { display: none !important; }
-    .btn-nav:hover { background: var(--lavender-dark) !important; }
+    .btn-nav:hover { background: var(--lavender-mid) !important; }
     .nav-toggle { display: none; cursor: pointer; flex-direction: column; gap: 5px; background: none; border: none; padding: 4px; }
     .nav-toggle span { width: 24px; height: 1.5px; background: var(--lavender-deep); display: block; }
 
@@ -76,7 +73,7 @@
     }
     .hero-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(160deg, rgba(58,45,110,0.72) 0%, rgba(58,45,110,0.48) 60%, rgba(91,77,150,0.35) 100%);
+      background: linear-gradient(160deg, rgba(61,45,69,0.72) 0%, rgba(61,45,69,0.48) 60%, rgba(107,85,120,0.35) 100%);
     }
     .hero-content {
       position: relative; z-index: 1; text-align: center;
@@ -89,7 +86,7 @@
       margin-bottom: 1.8rem; opacity: 0.85;
     }
     .hero-title {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'The Seasons', 'Cormorant Garamond', serif;
       font-size: clamp(3.2rem, 7vw, 6.5rem); font-weight: 300;
       line-height: 1.05; color: #fff; margin-bottom: 1.6rem;
     }
@@ -100,17 +97,17 @@
     }
     .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
     .btn-primary {
-      display: inline-block; background: var(--lavender-light); color: var(--lavender-dark);
+      display: inline-block; background: var(--lavender); color: #fff;
       font-size: 0.74rem; font-weight: 500; letter-spacing: 0.14em;
       text-transform: uppercase; text-decoration: none;
-      padding: 0.95rem 2.4rem; border-radius: 30px; transition: all 0.3s;
+      padding: 0.95rem 2.4rem; border-radius: 50px; transition: all 0.3s;
     }
-    .btn-primary:hover { background: #fff; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+    .btn-primary:hover { background: var(--lavender-mid); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(107,85,120,0.25); }
     .btn-outline {
       display: inline-block; border: 1px solid rgba(255,255,255,0.45);
       color: rgba(255,255,255,0.85); font-size: 0.74rem; font-weight: 300;
       letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none;
-      padding: 0.95rem 2.2rem; border-radius: 30px; transition: all 0.3s;
+      padding: 0.95rem 2.2rem; border-radius: 50px; transition: all 0.3s;
     }
     .btn-outline:hover { border-color: rgba(255,255,255,0.8); color: #fff; }
     .hero-scroll {
@@ -123,18 +120,18 @@
 
     /* ── TRUST BAR ── */
     .trust-bar {
-      background: var(--lavender-pale); border-bottom: 1px solid rgba(179,163,220,0.3);
+      background: var(--lavender-pale); border-bottom: 1px solid rgba(159,134,170,0.3);
       padding: 1.4rem 4rem; display: flex; align-items: center;
       justify-content: center; gap: 3rem; flex-wrap: wrap;
     }
     .trust-item { display: flex; align-items: center; gap: 0.7rem; color: var(--lavender-deep); }
     .trust-item span { font-size: 0.76rem; font-weight: 400; letter-spacing: 0.05em; color: var(--text-light); }
-    .trust-dot { width: 4px; height: 4px; border-radius: 50%; background: rgba(179,163,220,0.5); }
+    .trust-dot { width: 4px; height: 4px; border-radius: 50%; background: rgba(159,134,170,0.5); }
 
     /* ── SERVICES (ARCH CARDS) ── */
-    .services { padding: 7rem 4rem; background: var(--white); text-align: center; }
+    .services { padding: 9rem 4rem; background: var(--cream); text-align: center; }
     .section-eyebrow { font-size: 0.68rem; font-weight: 400; letter-spacing: 0.3em; text-transform: uppercase; color: var(--lavender-mid); margin-bottom: 1rem; }
-    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.4rem); font-weight: 300; color: var(--lavender-dark); line-height: 1.15; margin-bottom: 1rem; }
+    .section-title { font-family: 'The Seasons', 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.4rem); font-weight: 300; color: var(--lavender-dark); line-height: 1.15; margin-bottom: 1rem; }
     .section-title em { font-style: italic; color: var(--lavender-mid); }
     .section-sub { font-size: 0.87rem; font-weight: 300; color: var(--text-light); line-height: 1.8; max-width: 440px; margin: 0 auto 4rem; }
 
@@ -156,17 +153,52 @@
     .arch-card:hover .arch-frame img { transform: scale(1.07); }
     .arch-label {
       margin-top: 1.2rem; padding-bottom: 1rem;
-      border-bottom: 1px solid rgba(179,163,220,0.4);
+      border-bottom: 1px solid rgba(159,134,170,0.4);
       transition: border-color 0.3s;
     }
     .arch-card:hover .arch-label { border-color: var(--lavender-mid); }
     .arch-name {
-      display: block; font-family: 'Cormorant Garamond', serif;
+      display: block; font-family: 'The Seasons', 'Cormorant Garamond', serif;
       font-size: 1.15rem; font-style: italic; font-weight: 400;
       color: var(--text); transition: color 0.3s;
     }
     .arch-card:hover .arch-name { color: var(--lavender-deep); }
     .arch-tag { display: block; font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--lavender-mid); margin-top: 0.3rem; }
+
+    /* ── BREAK SECTION ── */
+    .section-break {
+      background: #DAD2E1; padding: 5rem 4rem;
+    }
+    .section-break-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: center; gap: 6rem;
+      flex-wrap: wrap;
+    }
+    .break-stat { text-align: center; }
+    .break-stat-num {
+      font-family: 'The Seasons', 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 5vw, 4.5rem); font-weight: 300;
+      color: var(--lavender-dark); line-height: 1;
+    }
+    .break-stat-label {
+      font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--lavender-deep); margin-top: 0.6rem;
+    }
+    .break-divider {
+      width: 1px; height: 60px; background: rgba(107,85,120,0.25);
+      flex-shrink: 0;
+    }
+    .break-intro { text-align: center; }
+    .break-intro-eyebrow {
+      font-size: 0.72rem; letter-spacing: 0.35em; text-transform: uppercase;
+      color: var(--lavender-deep); margin-bottom: 0.6rem;
+    }
+    .break-intro-script {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(3rem, 6vw, 5rem);
+      color: var(--lavender-dark); line-height: 1.1;
+    }
+    @media (max-width: 640px) { .break-divider { display: none; } .section-break { padding: 4rem 1.5rem; } .section-break-inner { gap: 3rem; } }
 
     /* ── ABOUT ── */
     .about { padding: 8rem 6rem; background: var(--cream); }
@@ -179,37 +211,37 @@
     .about-image-frame img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
     .about-image-wrap::before {
       content: ''; position: absolute; top: 20px; left: -20px;
-      width: 100%; height: 100%; border: 2px solid rgba(179,163,220,0.3);
+      width: 100%; height: 100%; border: 2px solid rgba(159,134,170,0.3);
       border-radius: 999px 999px 20px 20px; z-index: 0;
     }
     .about-badge {
       position: absolute; bottom: -16px; right: -16px; z-index: 2;
-      background: var(--lavender-deep); color: #fff; border-radius: 12px;
+      background: var(--lavender-deep); color: #fff; border-radius: 20px;
       padding: 1.2rem 1.6rem; text-align: center;
-      box-shadow: 0 8px 30px rgba(91,77,150,0.25);
+      box-shadow: 0 8px 32px rgba(107,85,120,0.22);
     }
-    .about-badge-num { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 300; line-height: 1; color: var(--lavender-light); }
-    .about-badge-label { font-size: 0.65rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(213,202,240,0.7); margin-top: 0.3rem; }
+    .about-badge-num { font-family: 'The Seasons', 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 300; line-height: 1; color: var(--lavender-light); }
+    .about-badge-label { font-size: 0.65rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(204,196,217,0.7); margin-top: 0.3rem; }
     .about-content .section-eyebrow { margin-bottom: 0.8rem; }
-    .about-name { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 3vw, 3.2rem); font-weight: 300; color: var(--lavender-dark); line-height: 1.1; margin-bottom: 0.4rem; }
-    .about-role { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-style: italic; color: var(--lavender-mid); margin-bottom: 2rem; }
+    .about-name { font-family: 'The Seasons', 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 3vw, 3.2rem); font-weight: 300; color: var(--lavender-dark); line-height: 1.1; margin-bottom: 0.4rem; }
+    .about-role { font-family: 'The Seasons', 'Cormorant Garamond', serif; font-size: 1.1rem; font-style: italic; color: var(--lavender-mid); margin-bottom: 2rem; }
     .about-divider { width: 50px; height: 2px; background: linear-gradient(90deg, var(--lavender-mid), var(--lavender-light)); border-radius: 2px; margin-bottom: 2rem; }
     .about-bio { font-size: 0.92rem; font-weight: 300; line-height: 2; color: var(--text-light); margin-bottom: 1.2rem; }
-    .about-philosophy { background: var(--lavender-pale); border-left: 3px solid var(--lavender-mid); border-radius: 0 10px 10px 0; padding: 1.3rem 1.8rem; margin: 2rem 0; }
-    .about-philosophy p { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-style: italic; color: var(--lavender-deep); line-height: 1.5; }
+    .about-philosophy { background: var(--lavender-pale); border-left: 3px solid var(--lavender-mid); border-radius: 12px; padding: 1.3rem 1.8rem; margin: 2rem 0; }
+    .about-philosophy p { font-family: 'Great Vibes', cursive; font-size: 2.2rem; font-style: normal; color: var(--lavender-deep); line-height: 1.4; }
     .about-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.8rem; }
-    .about-pill { background: var(--white); border: 1px solid rgba(179,163,220,0.3); color: var(--lavender-deep); font-size: 0.73rem; padding: 0.4rem 1rem; border-radius: 20px; }
+    .about-pill { background: var(--white); border: 1px solid rgba(159,134,170,0.3); color: var(--lavender-deep); font-size: 0.73rem; padding: 0.4rem 1rem; border-radius: 20px; }
 
     /* ── REVIEWS (horizontal scroll) ── */
-    .reviews { padding: 6rem 0; background: var(--lavender-pale); border-top: 1px solid rgba(179,163,220,0.2); }
+    .reviews { padding: 8rem 0; background: var(--lavender-pale); border-top: 1px solid rgba(159,134,170,0.15); }
     .reviews-inner { max-width: 1200px; margin: 0 auto; padding: 0 4rem; }
     .reviews-header { text-align: center; margin-bottom: 3.5rem; }
-    .reviews-tag { display: inline-block; border: 1px solid rgba(139,121,192,0.4); color: var(--lavender-mid); font-size: 0.7rem; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.3rem 1rem; border-radius: 8px; margin-bottom: 1.2rem; }
+    .reviews-tag { display: inline-block; border: 1px solid rgba(138,117,152,0.4); color: var(--lavender-mid); font-size: 0.7rem; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.3rem 1rem; border-radius: 8px; margin-bottom: 1.2rem; }
     .reviews-sub { font-size: 0.87rem; font-weight: 300; color: var(--text-light); line-height: 1.8; max-width: 400px; margin: 0.8rem auto 0; }
     .reviews-track-wrap { overflow: hidden; padding: 1rem 0; mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent); }
     .reviews-track { display: flex; flex-direction: row; gap: 1.5rem; width: max-content; animation: scrollLeft 35s linear infinite; }
     @keyframes scrollLeft { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-    .review-card { width: 300px; flex-shrink: 0; background: var(--white); border: 1px solid rgba(179,163,220,0.2); border-radius: 24px; padding: 2rem 2.2rem; box-shadow: 0 4px 20px rgba(91,77,150,0.06); }
+    .review-card { width: 300px; flex-shrink: 0; background: var(--white); border-radius: 20px; padding: 2rem 2.2rem; box-shadow: 0 6px 28px rgba(107,85,120,0.09), 0 1px 4px rgba(107,85,120,0.04); }
     .review-text { font-size: 0.87rem; font-weight: 300; line-height: 1.85; color: var(--text-light); }
     .review-meta { display: flex; align-items: center; gap: 0.75rem; margin-top: 1.4rem; }
     .review-avatar { width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--lavender-light); object-fit: cover; background: var(--lavender-pale); flex-shrink: 0; display: block; }
@@ -218,54 +250,164 @@
 
     /* ── PROMOTIONS ── */
     .promotions { background: linear-gradient(135deg, var(--lavender-dark) 0%, var(--lavender-deep) 100%); padding: 7rem 4rem; position: relative; overflow: hidden; }
-    .promotions::before { content: ''; position: absolute; top: -100px; right: -100px; width: 450px; height: 450px; border-radius: 50%; background: radial-gradient(circle, rgba(213,202,240,0.07) 0%, transparent 70%); }
+    .promotions::before { content: ''; position: absolute; top: -100px; right: -100px; width: 450px; height: 450px; border-radius: 50%; background: radial-gradient(circle, rgba(204,196,217,0.07) 0%, transparent 70%); }
     .promotions-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; text-align: center; }
     .promotions .section-eyebrow { color: var(--lavender-light); margin-bottom: 0.8rem; }
     .promotions .section-title { color: var(--cream); margin-bottom: 3.5rem; }
     .promos-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; text-align: left; }
-    .promo-card { background: rgba(250,246,240,0.06); border: 1px solid rgba(213,202,240,0.18); border-radius: 16px; padding: 2.8rem 2.4rem; transition: background 0.4s, border-color 0.4s, transform 0.3s; }
-    .promo-card:hover { background: rgba(250,246,240,0.1); border-color: rgba(213,202,240,0.4); transform: translateY(-3px); }
-    .promo-big { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 300; color: var(--lavender-light); line-height: 1; margin-bottom: 0.4rem; }
-    .promo-title { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 400; color: var(--cream); margin-bottom: 0.8rem; }
-    .promo-desc { font-size: 0.83rem; font-weight: 300; color: rgba(250,246,240,0.5); line-height: 1.85; }
-    .promo-cta { display: inline-block; margin-top: 1.8rem; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--lavender-light); text-decoration: none; border-bottom: 1px solid rgba(213,202,240,0.3); padding-bottom: 2px; transition: all 0.3s; }
+    .promo-card { background: rgba(247,243,235,0.08); border: 1px solid rgba(204,196,217,0.15); border-radius: 20px; padding: 2.8rem 2.4rem; transition: background 0.4s, border-color 0.4s, transform 0.3s, box-shadow 0.3s; }
+    .promo-card:hover { background: rgba(247,243,235,0.12); border-color: rgba(204,196,217,0.35); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(61,45,69,0.15); }
+    .promo-big { font-family: 'The Seasons', 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 300; color: var(--lavender-light); line-height: 1; margin-bottom: 0.4rem; }
+    .promo-title { font-family: 'The Seasons', 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 400; color: var(--cream); margin-bottom: 0.8rem; }
+    .promo-desc { font-size: 0.83rem; font-weight: 300; color: rgba(247,243,235,0.5); line-height: 1.85; }
+    .promo-cta { display: inline-block; margin-top: 1.8rem; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--lavender-light); text-decoration: none; border-bottom: 1px solid rgba(204,196,217,0.3); padding-bottom: 2px; transition: all 0.3s; }
     .promo-cta:hover { color: #fff; border-color: rgba(255,255,255,0.5); }
 
     /* ── POLICY ── */
-    .policy { padding: 7rem 4rem; background: var(--cream-dark); }
+    .policy { padding: 9rem 4rem; background: var(--cream-dark); }
     .policy-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.6fr; gap: 6rem; align-items: start; }
     .policy-left .section-title { text-align: left; margin-bottom: 1.2rem; }
     .policy-left p { font-size: 0.87rem; font-weight: 300; line-height: 1.9; color: var(--text-light); margin-bottom: 2rem; }
-    .btn-lavender { display: inline-block; background: var(--lavender-deep); color: #fff; font-size: 0.74rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; padding: 0.95rem 2.2rem; border-radius: 30px; transition: all 0.3s; }
-    .btn-lavender:hover { background: var(--lavender-dark); transform: translateY(-2px); }
+    .btn-lavender { display: inline-block; background: var(--lavender); color: #fff; font-size: 0.74rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; padding: 0.95rem 2.2rem; border-radius: 50px; transition: all 0.3s; }
+    .btn-lavender:hover { background: var(--lavender-mid); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(107,85,120,0.2); }
     .policy-items { display: flex; flex-direction: column; gap: 0.6rem; }
-    .policy-item { background: var(--white); padding: 1.7rem 2rem; display: grid; grid-template-columns: 40px 1fr; gap: 1.2rem; align-items: start; border-radius: 10px; transition: background 0.3s; }
-    .policy-item:hover { background: var(--lavender-pale); }
+    .policy-item { background: var(--white); padding: 1.7rem 2rem; display: grid; grid-template-columns: 40px 1fr; gap: 1.2rem; align-items: start; border-radius: 16px; box-shadow: 0 2px 12px rgba(107,85,120,0.07); transition: all 0.3s; }
+    .policy-item:hover { background: var(--lavender-pale); box-shadow: 0 4px 20px rgba(107,85,120,0.12); }
     .policy-icon { width: 40px; height: 40px; background: var(--lavender-pale); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .policy-item-title { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 500; color: var(--lavender-dark); margin-bottom: 0.3rem; }
+    .policy-item-title { font-family: 'The Seasons', 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 500; color: var(--lavender-dark); margin-bottom: 0.3rem; }
     .policy-item-text { font-size: 0.83rem; font-weight: 300; line-height: 1.75; color: var(--text-light); }
 
     /* ── CTA STRIP ── */
     .cta-strip { background: var(--lavender-light); padding: 3.5rem 4rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
-    .cta-strip-text { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 300; color: var(--lavender-dark); line-height: 1.2; }
+    .cta-strip-text { font-family: 'The Seasons', 'Cormorant Garamond', serif; font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 300; color: var(--lavender-dark); line-height: 1.2; }
     .cta-strip-text em { font-style: italic; }
-    .btn-deep { display: inline-block; background: var(--lavender-dark); color: #fff; font-size: 0.76rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; padding: 1.1rem 2.8rem; border-radius: 30px; white-space: nowrap; transition: all 0.3s; }
-    .btn-deep:hover { background: var(--lavender-deep); transform: translateY(-2px); }
+    .btn-deep { display: inline-block; background: var(--lavender-dark); color: #fff; font-size: 0.76rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; padding: 1.1rem 2.8rem; border-radius: 50px; white-space: nowrap; transition: all 0.3s; }
+    .btn-deep:hover { background: var(--lavender-deep); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(61,45,69,0.3); }
 
     /* ── FOOTER ── */
     footer { background: var(--lavender-dark); color: var(--cream); padding: 4rem 4rem 2.5rem; }
-    .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 4rem; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(213,202,240,0.1); }
-    .footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 400; letter-spacing: 0.08em; margin-bottom: 0.9rem; }
-    .footer-tagline { font-size: 0.8rem; font-weight: 300; line-height: 1.85; color: rgba(250,246,240,0.4); max-width: 250px; margin-bottom: 1.8rem; }
+    .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 4rem; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(204,196,217,0.1); }
+    .footer-brand { font-family: 'The Seasons', 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 400; letter-spacing: 0.08em; margin-bottom: 0.9rem; }
+    .footer-tagline { font-size: 0.8rem; font-weight: 300; line-height: 1.85; color: rgba(247,243,235,0.4); max-width: 250px; margin-bottom: 1.8rem; }
     .footer-social { display: flex; gap: 0.7rem; }
-    .footer-social a { width: 34px; height: 34px; background: rgba(213,202,240,0.08); border: 1px solid rgba(213,202,240,0.14); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: rgba(250,246,240,0.5); text-decoration: none; transition: all 0.3s; }
-    .footer-social a:hover { background: rgba(179,163,220,0.2); border-color: var(--lavender); color: var(--lavender-light); }
+    .footer-social a { width: 34px; height: 34px; background: rgba(204,196,217,0.08); border: 1px solid rgba(204,196,217,0.14); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: rgba(247,243,235,0.5); text-decoration: none; transition: all 0.3s; }
+    .footer-social a:hover { background: rgba(159,134,170,0.2); border-color: var(--lavender); color: var(--lavender-light); }
     .footer-col-title { font-size: 0.64rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--lavender); margin-bottom: 1.4rem; }
     .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
-    .footer-links a { font-size: 0.82rem; font-weight: 300; color: rgba(250,246,240,0.45); text-decoration: none; transition: color 0.3s; }
+    .footer-links a { font-size: 0.82rem; font-weight: 300; color: rgba(247,243,235,0.45); text-decoration: none; transition: color 0.3s; }
     .footer-links a:hover { color: var(--lavender-light); }
     .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
-    .footer-bottom p { font-size: 0.72rem; font-weight: 300; color: rgba(250,246,240,0.25); }
+    .footer-bottom p { font-size: 0.72rem; font-weight: 300; color: rgba(247,243,235,0.25); }
+
+    /* ── GRAIN TEXTURE ── */
+    body::after {
+      content: ''; position: fixed; inset: 0;
+      pointer-events: none; z-index: 9999;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-repeat: repeat; background-size: 250px 250px;
+      opacity: 0.055; mix-blend-mode: multiply;
+    }
+
+    /* ── QUIZ MODAL ── */
+    .quiz-trigger-wrap { text-align: center; margin-top: 1.8rem; }
+    .btn-quiz-trigger {
+      background: transparent; border: 1.5px solid var(--lavender-mid);
+      color: var(--lavender-deep); font-family: 'Gilda Display', serif;
+      font-size: 0.76rem; letter-spacing: 0.14em; text-transform: uppercase;
+      padding: 0.85rem 2rem; border-radius: 50px; cursor: pointer; transition: all 0.3s;
+    }
+    .btn-quiz-trigger:hover { background: var(--lavender); color: #fff; border-color: var(--lavender); }
+
+    .quiz-overlay {
+      position: fixed; inset: 0; z-index: 1000;
+      background: rgba(61,45,69,0.65); backdrop-filter: blur(8px);
+      display: flex; align-items: center; justify-content: center;
+      padding: 2rem; opacity: 0; pointer-events: none; transition: opacity 0.35s;
+    }
+    .quiz-overlay.active { opacity: 1; pointer-events: all; }
+    .quiz-modal {
+      background: var(--cream); border-radius: 24px;
+      width: 100%; max-width: 560px; padding: 3rem 3.5rem;
+      position: relative; max-height: 90vh; overflow-y: auto;
+      transform: translateY(20px); transition: transform 0.35s;
+      box-shadow: 0 24px 80px rgba(61,45,69,0.25);
+    }
+    .quiz-overlay.active .quiz-modal { transform: translateY(0); }
+    .quiz-close {
+      position: absolute; top: 1.2rem; right: 1.5rem;
+      background: none; border: none; font-size: 1.6rem; line-height: 1;
+      color: var(--text-light); cursor: pointer; transition: color 0.2s;
+    }
+    .quiz-close:hover { color: var(--lavender-deep); }
+    .quiz-progress-bar {
+      height: 3px; background: var(--lavender-pale); border-radius: 3px;
+      margin-bottom: 2.5rem; overflow: hidden;
+    }
+    .quiz-progress-fill { height: 100%; background: var(--lavender); border-radius: 3px; transition: width 0.4s ease; }
+    .quiz-step {
+      font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--lavender-mid); margin-bottom: 1rem;
+    }
+    .quiz-question-text {
+      font-family: 'The Seasons', 'Cormorant Garamond', serif;
+      font-size: clamp(1.4rem, 3vw, 1.9rem); font-weight: 300;
+      color: var(--lavender-dark); line-height: 1.3; margin-bottom: 2rem;
+    }
+    .quiz-answers { display: flex; flex-direction: column; gap: 0.7rem; margin-bottom: 2rem; }
+    .quiz-answer-btn {
+      background: var(--white); border: 1.5px solid rgba(159,134,170,0.3);
+      color: var(--text); font-family: 'Gilda Display', serif; font-size: 0.88rem;
+      padding: 0.9rem 1.4rem; border-radius: 50px; cursor: pointer;
+      text-align: left; transition: all 0.22s;
+    }
+    .quiz-answer-btn:hover { border-color: var(--lavender); color: var(--lavender-deep); background: var(--lavender-pale); }
+    .quiz-answer-btn.selected { background: var(--lavender); border-color: var(--lavender); color: #fff; }
+    .quiz-next {
+      display: block; width: 100%; background: var(--lavender); color: #fff;
+      border: none; font-family: 'Gilda Display', serif; font-size: 0.78rem;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      padding: 1rem; border-radius: 50px; cursor: pointer; transition: all 0.3s;
+    }
+    .quiz-next:disabled { opacity: 0.3; cursor: not-allowed; }
+    .quiz-next:not(:disabled):hover { background: var(--lavender-mid); transform: translateY(-1px); }
+    .quiz-screen { animation: fadeUp 0.4s ease both; }
+    .quiz-result { text-align: center; }
+    .quiz-result-eyebrow {
+      font-size: 0.68rem; letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--lavender-mid); margin-bottom: 0.5rem;
+    }
+    .quiz-result-name {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(2.8rem, 6vw, 4rem);
+      color: var(--lavender-dark); line-height: 1.1; margin-bottom: 0.3rem;
+    }
+    .quiz-result-tag {
+      font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--lavender-mid); margin-bottom: 1.6rem;
+    }
+    .quiz-result-desc {
+      font-size: 0.88rem; font-weight: 300; line-height: 1.85;
+      color: var(--text-light); max-width: 380px; margin: 0 auto 2rem;
+    }
+    .quiz-result-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .quiz-btn-learn {
+      display: inline-block; border: 1.5px solid var(--lavender); color: var(--lavender-deep);
+      font-size: 0.73rem; letter-spacing: 0.12em; text-transform: uppercase;
+      text-decoration: none; padding: 0.9rem 1.8rem; border-radius: 50px; transition: all 0.3s;
+    }
+    .quiz-btn-learn:hover { background: var(--lavender-pale); }
+    .quiz-btn-book {
+      display: inline-block; background: var(--lavender); color: #fff;
+      font-size: 0.73rem; letter-spacing: 0.12em; text-transform: uppercase;
+      text-decoration: none; padding: 0.9rem 1.8rem; border-radius: 50px; transition: all 0.3s;
+    }
+    .quiz-btn-book:hover { background: var(--lavender-mid); transform: translateY(-1px); }
+    .quiz-retake {
+      background: none; border: none; font-size: 0.75rem;
+      color: var(--text-light); cursor: pointer; text-decoration: underline; transition: color 0.2s;
+    }
+    .quiz-retake:hover { color: var(--lavender-deep); }
+    @media (max-width: 640px) { .quiz-modal { padding: 2rem 1.5rem; } }
 
     /* ── ANIMATIONS ── */
     @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
@@ -298,7 +440,7 @@
     @media (max-width: 640px) {
       .nav-links { display: none; }
       .nav-toggle { display: flex; }
-      .nav-links.open { display: flex; flex-direction: column; position: fixed; top: 70px; left: 0; right: 0; background: var(--cream); padding: 2rem; gap: 1.5rem; border-bottom: 1px solid rgba(179,163,220,0.2); z-index: 99; }
+      .nav-links.open { display: flex; flex-direction: column; position: fixed; top: 70px; left: 0; right: 0; background: var(--cream); padding: 2rem; gap: 1.5rem; border-bottom: 1px solid rgba(159,134,170,0.2); z-index: 99; }
       .hero-title { font-size: 3rem; }
       .services { padding: 4rem 1.5rem; }
       .arch-grid { grid-template-columns: repeat(2,1fr); gap: 1.5rem; max-width: 100%; }
@@ -314,7 +456,30 @@
 <body>
 
   <nav>
-    <a class="nav-logo" href="index.html">The Art of Massage Therapy</a>
+    <a class="nav-logo" href="index.html" aria-label="Massage 4 Stress — Home">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="52" height="52" aria-hidden="true">
+        <defs>
+          <path id="top-arc-h" d="M60,60m-46,0a46,46,0,1,1,92,0"/>
+          <path id="bot-arc-h" d="M60,60m-40,0a40,40,0,0,0,80,0"/>
+        </defs>
+        <circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" stroke-width="0.75"/>
+        <circle cx="60" cy="60" r="52" fill="none" stroke="currentColor" stroke-width="0.3"/>
+        <text font-size="9" letter-spacing="3" fill="currentColor" font-family="Cormorant Garamond,serif"><textPath href="#top-arc-h" startOffset="3%">MASSAGE 4 STRESS</textPath></text>
+        <text font-size="6.5" letter-spacing="2" fill="currentColor" font-family="Cormorant Garamond,serif"><textPath href="#bot-arc-h" startOffset="4%">relax · renew · restore</textPath></text>
+        <g fill="currentColor">
+          <line x1="60" y1="93" x2="60" y2="51" stroke="currentColor" stroke-width="0.8" stroke-linecap="round"/>
+          <ellipse cx="60" cy="49.5" rx="3" ry="5"/>
+          <ellipse cx="55" cy="56" rx="2.3" ry="4.2" transform="rotate(-25,55,56)"/>
+          <ellipse cx="65" cy="56" rx="2.3" ry="4.2" transform="rotate(25,65,56)"/>
+          <ellipse cx="54" cy="64" rx="2.2" ry="3.8" transform="rotate(-30,54,64)"/>
+          <ellipse cx="66" cy="64" rx="2.2" ry="3.8" transform="rotate(30,66,64)"/>
+          <ellipse cx="54" cy="72" rx="2" ry="3.3" transform="rotate(-35,54,72)"/>
+          <ellipse cx="66" cy="72" rx="2" ry="3.3" transform="rotate(35,66,72)"/>
+          <path d="M60,82Q52,84,50,90" stroke="currentColor" stroke-width="0.75" fill="none" stroke-linecap="round"/>
+          <path d="M60,82Q68,84,70,90" stroke="currentColor" stroke-width="0.75" fill="none" stroke-linecap="round"/>
+        </g>
+      </svg>
+    </a>
     <button class="nav-toggle" aria-label="Toggle menu" onclick="this.nextElementSibling.classList.toggle('open')">
       <span></span><span></span><span></span>
     </button>
@@ -323,7 +488,7 @@
       <li><a href="#services">Services</a></li>
       <li><a href="#about">About Me</a></li>
       <li><a href="#">New Location</a></li>
-      <li><a href="https://pocketsuite.io/book/liza-abreu?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGn9ojGhDi2l3UCpTbaMQq3MhtSY20o3d_Rte078w28RCL1CBgm6DxskX6heYI_aem_Agdpu3Q1hRmB8BGWy8WdqA" class="btn-nav">Book Here</a></li>
+      <li><a href="https://pocketsuite.io/book/liza-abreu/items" class="btn-nav">Book Here</a></li>
     </ul>
   </nav>
 
@@ -335,7 +500,6 @@
       <h1 class="hero-title">The Art of<br><em>Massage Therapy</em></h1>
       <p class="hero-sub">Tailored therapeutic experiences designed to restore your body, quiet your mind, and renew your spirit.</p>
       <div class="hero-btns">
-        <a href="https://pocketsuite.io/book/liza-abreu?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGn9ojGhDi2l3UCpTbaMQq3MhtSY20o3d_Rte078w28RCL1CBgm6DxskX6heYI_aem_Agdpu3Q1hRmB8BGWy8WdqA" class="btn-primary">Book Your Session</a>
         <a href="#services" class="btn-outline">View Services</a>
       </div>
     </div>
@@ -409,6 +573,18 @@
         </div>
       </a>
     </div>
+    <div class="quiz-trigger-wrap reveal">
+      <button class="btn-quiz-trigger" id="quizTrigger">Not sure which service is right for you? Take the quiz →</button>
+    </div>
+  </section>
+
+  <section class="section-break">
+    <div class="section-break-inner">
+      <div class="break-intro">
+        <p class="break-intro-eyebrow">Meet Your</p>
+        <p class="break-intro-script">Massage Therapist</p>
+      </div>
+    </div>
   </section>
 
   <section class="about" id="about">
@@ -423,7 +599,6 @@
         </div>
       </div>
       <div class="about-content reveal">
-        <p class="section-eyebrow">Meet Your Therapist</p>
         <h2 class="about-name">Liza Abreu</h2>
         <p class="about-role">Licensed Massage Therapist</p>
         <div class="about-divider"></div>
@@ -489,13 +664,13 @@
           <div class="promo-big">20%</div>
           <div class="promo-title">New Client Welcome</div>
           <p class="promo-desc">First-time guests receive 20% off any introductory massage. Simply mention it when booking — no coupon needed.</p>
-          <a href="https://pocketsuite.io/book/liza-abreu?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGn9ojGhDi2l3UCpTbaMQq3MhtSY20o3d_Rte078w28RCL1CBgm6DxskX6heYI_aem_Agdpu3Q1hRmB8BGWy8WdqA" class="promo-cta">Book your first session →</a>
+          <a href="https://pocketsuite.io/book/liza-abreu/items" class="promo-cta">Book your first session →</a>
         </div>
         <div class="promo-card reveal">
           <div class="promo-big">50%</div>
           <div class="promo-title">Loyalty Reward Card</div>
           <p class="promo-desc">Your 6th massage is at half price. Our loyalty card rewards your commitment to self-care with meaningful savings.</p>
-          <a href="https://pocketsuite.io/book/liza-abreu?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGn9ojGhDi2l3UCpTbaMQq3MhtSY20o3d_Rte078w28RCL1CBgm6DxskX6heYI_aem_Agdpu3Q1hRmB8BGWy8WdqA" class="promo-cta">Start earning today →</a>
+          <a href="https://pocketsuite.io/book/liza-abreu/items" class="promo-cta">Start earning today →</a>
         </div>
         <div class="promo-card reveal">
           <div class="promo-big">Free</div>
@@ -513,23 +688,23 @@
         <p class="section-eyebrow">Booking Information</p>
         <h2 class="section-title">What to<br><em>Expect</em></h2>
         <p>A few simple policies help us ensure every client receives the full, unhurried care they deserve.</p>
-        <a href="https://pocketsuite.io/book/liza-abreu?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGn9ojGhDi2l3UCpTbaMQq3MhtSY20o3d_Rte078w28RCL1CBgm6DxskX6heYI_aem_Agdpu3Q1hRmB8BGWy8WdqA" class="btn-lavender">Reserve Your Session</a>
+        <a href="https://pocketsuite.io/book/liza-abreu/items" class="btn-lavender">Reserve Your Session</a>
       </div>
       <div class="policy-items reveal">
         <div class="policy-item">
-          <div class="policy-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#8b79c0" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+          <div class="policy-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#8A7598" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
           <div><p class="policy-item-title">24-Hour Cancellation Notice</p><p class="policy-item-text">Please cancel or reschedule at least 24 hours before your appointment so we can offer your slot to another client.</p></div>
         </div>
         <div class="policy-item">
-          <div class="policy-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#8b79c0" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+          <div class="policy-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#8A7598" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
           <div><p class="policy-item-title">$25 Late Cancellation Fee</p><p class="policy-item-text">Cancellations with less than 24 hours notice or missed appointments will incur a $25 fee.</p></div>
         </div>
         <div class="policy-item">
-          <div class="policy-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#8b79c0" stroke-width="1.5"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
+          <div class="policy-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#8A7598" stroke-width="1.5"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
           <div><p class="policy-item-title">Credit Card Required for Booking</p><p class="policy-item-text">A valid credit card holds your reservation. Your card will not be charged until the time of your session.</p></div>
         </div>
         <div class="policy-item">
-          <div class="policy-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#8b79c0" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div class="policy-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#8A7598" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
           <div><p class="policy-item-title">Your Comfort Is Our Priority</p><p class="policy-item-text">All sessions are fully customizable. Please share your pressure preferences and any health concerns before your appointment.</p></div>
         </div>
       </div>
@@ -538,7 +713,7 @@
 
   <div class="cta-strip">
     <p class="cta-strip-text">Ready to <em>feel the difference?</em><br>Your healing starts here.</p>
-    <a href="https://pocketsuite.io/book/liza-abreu?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGn9ojGhDi2l3UCpTbaMQq3MhtSY20o3d_Rte078w28RCL1CBgm6DxskX6heYI_aem_Agdpu3Q1hRmB8BGWy8WdqA" class="btn-deep">Book Your Session Now</a>
+    <a href="https://pocketsuite.io/book/liza-abreu/items" class="btn-deep">Book Your Session Now</a>
   </div>
 
   <footer>
@@ -558,7 +733,7 @@
           <li><a href="#services">Services</a></li>
           <li><a href="#about">About Me</a></li>
           <li><a href="#">New Location</a></li>
-          <li><a href="https://pocketsuite.io/book/liza-abreu?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGn9ojGhDi2l3UCpTbaMQq3MhtSY20o3d_Rte078w28RCL1CBgm6DxskX6heYI_aem_Agdpu3Q1hRmB8BGWy8WdqA">Book Now</a></li>
+          <li><a href="https://pocketsuite.io/book/liza-abreu/items">Book Now</a></li>
         </ul>
       </div>
       <div>
@@ -577,6 +752,31 @@
     </div>
   </footer>
 
+  <!-- QUIZ MODAL -->
+  <div class="quiz-overlay" id="quizOverlay" role="dialog" aria-modal="true" aria-label="Service Finder Quiz">
+    <div class="quiz-modal">
+      <button class="quiz-close" id="quizClose" aria-label="Close quiz">×</button>
+      <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quizProgressFill" style="width:0%"></div></div>
+      <div id="quizQuestion" class="quiz-screen">
+        <p class="quiz-step" id="quizStep"></p>
+        <h2 class="quiz-question-text" id="quizQuestionText"></h2>
+        <div class="quiz-answers" id="quizAnswers"></div>
+        <button class="quiz-next" id="quizNext" disabled>Next →</button>
+      </div>
+      <div id="quizResult" class="quiz-screen quiz-result" style="display:none">
+        <p class="quiz-result-eyebrow">Your perfect match is...</p>
+        <p class="quiz-result-name" id="quizResultName"></p>
+        <p class="quiz-result-tag" id="quizResultTag"></p>
+        <p class="quiz-result-desc" id="quizResultDesc"></p>
+        <div class="quiz-result-btns">
+          <a class="quiz-btn-learn" id="quizLearnMore" href="#">Learn More</a>
+          <a class="quiz-btn-book" href="https://pocketsuite.io/book/liza-abreu/items" target="_blank" rel="noopener">Book Now</a>
+        </div>
+        <button class="quiz-retake" id="quizRetake">Retake the quiz</button>
+      </div>
+    </div>
+  </div>
+
   <script>
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
@@ -588,6 +788,146 @@
       });
     }, { threshold: 0.08 });
     reveals.forEach(el => observer.observe(el));
+
+    // ── QUIZ ──
+    const BOOK_URL = 'https://pocketsuite.io/book/liza-abreu/items';
+
+    const quizQuestions = [
+      {
+        q: "How does your body feel right now?",
+        answers: [
+          { text: "Tense and achy", scores: { r: 2, hs: 1 } },
+          { text: "Stressed and mentally drained", scores: { h: 2, hs: 1 } },
+          { text: "Tired and craving warmth", scores: { hs: 2, h: 1 } },
+          { text: "I'm expecting a baby 🤍", scores: { p: 5 } }
+        ]
+      },
+      {
+        q: "What's your main goal for this session?",
+        answers: [
+          { text: "Release muscle pain and tension", scores: { r: 2, hs: 1 } },
+          { text: "Deeply relax and unwind", scores: { h: 2 } },
+          { text: "Warm, soothing relief", scores: { hs: 2, h: 1 } },
+          { text: "Safe, nurturing care for my pregnancy", scores: { p: 5 } }
+        ]
+      },
+      {
+        q: "How much pressure do you prefer?",
+        answers: [
+          { text: "Light and gentle", scores: { h: 2 } },
+          { text: "Medium and balanced", scores: { h: 1, hs: 1 } },
+          { text: "Firm and targeted", scores: { r: 2 } },
+          { text: "Pregnancy comfort is key", scores: { p: 5 } }
+        ]
+      },
+      {
+        q: "What kind of stress are you carrying?",
+        answers: [
+          { text: "Physical — my muscles are really tight", scores: { r: 2, hs: 1 } },
+          { text: "Emotional — I need to fully decompress", scores: { h: 2 } },
+          { text: "Both physical and emotional", scores: { hs: 2, h: 1 } },
+          { text: "I just want to feel completely pampered", scores: { h: 1, hs: 1 } }
+        ]
+      },
+      {
+        q: "Which sounds most dreamy right now?",
+        answers: [
+          { text: "A long, flowing, melting-into-the-table massage", scores: { h: 3 } },
+          { text: "Warm stones gliding over tight muscles", scores: { hs: 3 } },
+          { text: "Deep, targeted work on problem spots", scores: { r: 3 } },
+          { text: "Gentle, safe care for me and my baby", scores: { p: 5 } }
+        ]
+      }
+    ];
+
+    const quizResults = {
+      h:  { name: "Heart & Soul",    tag: "Swedish · Relaxation",      desc: "Your mind and body are calling for deep relaxation — Heart & Soul's flowing Swedish techniques will melt your stress away.",             link: "heart-and-soul.html" },
+      hs: { name: "Healing Stones",  tag: "Stone Therapy · Deep Relief", desc: "The warmth of healing stones is exactly what your body needs — soothing tension and melting tightness from the inside out.",           link: "healing-stones.html" },
+      r:  { name: "Restorative",     tag: "Deep Tissue · Cupping",      desc: "Your body needs targeted, therapeutic work — Restorative's deep tissue and cupping techniques get to the root of your tension.",          link: "restorative.html" },
+      p:  { name: "Prenatal Bliss",  tag: "Prenatal · Nurturing",       desc: "Designed for expecting mothers, Prenatal Bliss provides the safe, nurturing care you and your baby truly deserve.",                       link: "prenatal-bliss.html" }
+    };
+
+    let currentQ = 0;
+    let scores = { h: 0, hs: 0, r: 0, p: 0 };
+    let selectedIdx = null;
+
+    const overlay    = document.getElementById('quizOverlay');
+    const qScreen    = document.getElementById('quizQuestion');
+    const rScreen    = document.getElementById('quizResult');
+    const stepEl     = document.getElementById('quizStep');
+    const questionEl = document.getElementById('quizQuestionText');
+    const answersEl  = document.getElementById('quizAnswers');
+    const nextBtn    = document.getElementById('quizNext');
+    const progressEl = document.getElementById('quizProgressFill');
+
+    function openQuiz() {
+      currentQ = 0; scores = { h: 0, hs: 0, r: 0, p: 0 };
+      qScreen.style.display = ''; rScreen.style.display = 'none';
+      renderQuestion();
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeQuiz() {
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function renderQuestion() {
+      selectedIdx = null;
+      nextBtn.disabled = true;
+      const data = quizQuestions[currentQ];
+      stepEl.textContent = `Question ${currentQ + 1} of ${quizQuestions.length}`;
+      questionEl.textContent = data.q;
+      progressEl.style.width = `${(currentQ / quizQuestions.length) * 100}%`;
+      answersEl.innerHTML = '';
+      data.answers.forEach((a, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'quiz-answer-btn';
+        btn.textContent = a.text;
+        btn.addEventListener('click', () => selectAnswer(i));
+        answersEl.appendChild(btn);
+      });
+      // re-trigger animation
+      qScreen.style.animation = 'none';
+      requestAnimationFrame(() => { qScreen.style.animation = ''; });
+    }
+
+    function selectAnswer(i) {
+      selectedIdx = i;
+      document.querySelectorAll('.quiz-answer-btn').forEach((b, idx) => b.classList.toggle('selected', idx === i));
+      nextBtn.disabled = false;
+    }
+
+    function advance() {
+      const ans = quizQuestions[currentQ].answers[selectedIdx];
+      Object.entries(ans.scores).forEach(([k, v]) => { scores[k] += v; });
+      currentQ++;
+      if (currentQ < quizQuestions.length) {
+        renderQuestion();
+      } else {
+        showResult();
+      }
+    }
+
+    function showResult() {
+      progressEl.style.width = '100%';
+      const winner = Object.entries(scores).sort((a, b) => b[1] - a[1])[0][0];
+      const res = quizResults[winner];
+      document.getElementById('quizResultName').textContent = res.name;
+      document.getElementById('quizResultTag').textContent  = res.tag;
+      document.getElementById('quizResultDesc').textContent = res.desc;
+      document.getElementById('quizLearnMore').href         = res.link;
+      qScreen.style.display = 'none';
+      rScreen.style.display = '';
+    }
+
+    document.getElementById('quizTrigger').addEventListener('click', openQuiz);
+    document.getElementById('quizClose').addEventListener('click', closeQuiz);
+    document.getElementById('quizNext').addEventListener('click', advance);
+    document.getElementById('quizRetake').addEventListener('click', openQuiz);
+    overlay.addEventListener('click', e => { if (e.target === overlay) closeQuiz(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeQuiz(); });
   </script>
 </body>
 </html>

@@ -6,41 +6,41 @@
   <title>Prenatal Bliss — The Art of Massage Therapy</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Gilda+Display&family=Great+Vibes&family=The+Seasons&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --cream:#faf6f0; --cream-dark:#f2ebe0; --lavender-pale:#ede8f8;
-      --lavender-light:#d5caf0; --lavender:#b3a3dc; --lavender-mid:#8b79c0;
-      --lavender-deep:#5c4d96; --lavender-dark:#3a2d6e;
-      --text:#241b3a; --text-light:#7a6a90; --white:#fefcf8;
+      --cream:#F7F3EB; --cream-dark:#E6DDD4; --lavender-pale:#DAD2E1;
+      --lavender-light:#CCC4D9; --lavender:#9F86AA; --lavender-mid:#8A7598;
+      --lavender-deep:#6B5578; --lavender-dark:#3D2D45;
+      --text:#2D1F1F; --text-light:#786560; --white:#FEFCF8;
     }
     html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
+    body { font-family: 'Gilda Display', serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
     ::-webkit-scrollbar { width: 5px; }
     ::-webkit-scrollbar-track { background: var(--lavender-pale); }
     ::-webkit-scrollbar-thumb { background: var(--lavender); border-radius: 3px; }
 
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 4rem; height: 70px; background: rgba(250,246,240,0.93); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(179,163,220,0.2); }
-    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--lavender-dark); text-decoration: none; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 4rem; height: 70px; background: rgba(247,243,235,0.93); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(159,134,170,0.2); }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; color: var(--lavender-deep); height: 48px; }
     .nav-links { display: flex; list-style: none; gap: 2.5rem; align-items: center; }
     .nav-links a { font-size: 0.76rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light); text-decoration: none; transition: color 0.3s; position: relative; }
     .nav-links a::after { content: ''; position: absolute; bottom: -3px; left: 0; width: 0; height: 1px; background: var(--lavender-mid); transition: width 0.3s; }
     .nav-links a:hover { color: var(--lavender-deep); }
     .nav-links a:hover::after { width: 100%; }
-    .btn-nav { background: var(--lavender-deep) !important; color: #fff !important; padding: 0.55rem 1.4rem; border-radius: 30px; }
+    .btn-nav { background: var(--lavender) !important; color: #fff !important; padding: 0.55rem 1.4rem; border-radius: 50px; }
     .btn-nav::after { display: none !important; }
     .nav-toggle { display: none; cursor: pointer; flex-direction: column; gap: 5px; background: none; border: none; padding: 4px; }
     .nav-toggle span { width: 24px; height: 1.5px; background: var(--lavender-deep); display: block; }
 
     .detail-hero { background: linear-gradient(135deg, var(--lavender-dark) 0%, var(--lavender-deep) 100%); padding: 10rem 4rem 6rem; text-align: center; position: relative; overflow: hidden; }
-    .detail-hero::before { content: ''; position: absolute; top: -80px; right: -80px; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(213,202,240,0.1) 0%, transparent 70%); }
-    .detail-hero::after { content: ''; position: absolute; bottom: -60px; left: 5%; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(232,197,212,0.08) 0%, transparent 70%); }
-    .detail-back { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(213,202,240,0.6); text-decoration: none; margin-bottom: 2.5rem; transition: color 0.3s; position: relative; z-index: 1; }
+    .detail-hero::before { content: ''; position: absolute; top: -80px; right: -80px; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(204,196,217,0.1) 0%, transparent 70%); }
+    .detail-hero::after { content: ''; position: absolute; bottom: -60px; left: 5%; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(204,196,217,0.08) 0%, transparent 70%); }
+    .detail-back { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(204,196,217,0.6); text-decoration: none; margin-bottom: 2.5rem; transition: color 0.3s; position: relative; z-index: 1; }
     .detail-back:hover { color: var(--lavender-light); }
     .detail-tag { font-size: 0.68rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--lavender-light); opacity: 0.7; margin-bottom: 1rem; position: relative; z-index: 1; }
-    .detail-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 6vw, 5.5rem); font-weight: 300; color: #fff; line-height: 1.05; margin-bottom: 1.2rem; position: relative; z-index: 1; }
-    .detail-title em { font-style: italic; color: var(--lavender-light); }
+    .detail-title { font-family: 'The Seasons', 'Cormorant Garamond', serif; font-size: clamp(3rem, 6vw, 5.5rem); font-weight: 300; color: #fff; line-height: 1.05; margin-bottom: 1.2rem; position: relative; z-index: 1; }
+    .detail-title em { font-family: 'Great Vibes', cursive; font-style: normal; font-size: 1.1em; color: var(--lavender-light); }
     .detail-intro { font-size: 0.92rem; font-weight: 300; color: rgba(255,255,255,0.55); max-width: 500px; line-height: 1.9; margin: 0 auto; position: relative; z-index: 1; }
 
     .detail-content { padding: 7rem 4rem; background: var(--cream); }
@@ -50,43 +50,50 @@
     .detail-arch img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
 
     .detail-section-label { font-size: 0.66rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--lavender-mid); margin-bottom: 0.6rem; }
-    .detail-heading { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: var(--lavender-dark); line-height: 1.2; margin-bottom: 1.5rem; }
+    .detail-heading { font-family: 'The Seasons', 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: var(--lavender-dark); line-height: 1.2; margin-bottom: 1.5rem; }
     .detail-heading em { font-style: italic; }
     .detail-divider { width: 40px; height: 2px; background: linear-gradient(90deg, var(--lavender-mid), var(--lavender-light)); border-radius: 2px; margin-bottom: 2rem; }
     .detail-desc { font-size: 0.93rem; font-weight: 300; line-height: 2; color: var(--text-light); margin-bottom: 1.4rem; }
 
     .detail-includes { background: var(--lavender-pale); border-radius: 12px; padding: 1.8rem 2rem; margin: 2rem 0; }
-    .detail-includes-title { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 500; color: var(--lavender-dark); margin-bottom: 1rem; }
+    .detail-includes-title { font-family: 'The Seasons', 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 500; color: var(--lavender-dark); margin-bottom: 1rem; }
     .detail-includes ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
     .detail-includes li { font-size: 0.85rem; font-weight: 300; color: var(--text-light); display: flex; align-items: flex-start; gap: 0.6rem; line-height: 1.6; }
     .detail-includes li::before { content: '✦'; color: var(--lavender-mid); font-size: 0.65rem; flex-shrink: 0; margin-top: 0.2rem; }
 
-    .detail-note { background: var(--white); border: 1px solid rgba(179,163,220,0.25); border-left: 3px solid var(--lavender-mid); border-radius: 0 10px 10px 0; padding: 1.2rem 1.6rem; margin-bottom: 2rem; }
+    .detail-note { background: var(--white); border: 1px solid rgba(159,134,170,0.25); border-left: 3px solid var(--lavender-mid); border-radius: 0 10px 10px 0; padding: 1.2rem 1.6rem; margin-bottom: 2rem; }
     .detail-note p { font-size: 0.84rem; font-weight: 300; color: var(--text-light); line-height: 1.75; }
     .detail-note strong { color: var(--lavender-deep); font-weight: 500; }
 
     .detail-pricing { margin: 2rem 0; }
-    .detail-pricing-title { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 500; color: var(--lavender-dark); margin-bottom: 1rem; }
-    .price-row { display: flex; align-items: center; justify-content: space-between; padding: 1rem 0; border-bottom: 1px solid rgba(179,163,220,0.2); }
+    .detail-pricing-title { font-family: 'The Seasons', 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 500; color: var(--lavender-dark); margin-bottom: 1rem; }
+    .price-row { display: flex; align-items: center; justify-content: space-between; padding: 1rem 0; border-bottom: 1px solid rgba(159,134,170,0.2); }
     .price-row:last-child { border-bottom: none; }
     .price-row-duration { font-size: 0.85rem; font-weight: 400; color: var(--text); }
     .price-row-note { font-size: 0.72rem; font-weight: 300; color: var(--lavender-mid); font-style: italic; margin-top: 0.2rem; }
-    .price-row-amount { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 400; color: var(--lavender-deep); line-height: 1; }
+    .price-row-amount { font-family: 'The Seasons', 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 400; color: var(--lavender-deep); line-height: 1; }
 
-    .btn-book { display: block; background: var(--lavender-deep); color: #fff; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; padding: 1.1rem 2.8rem; border-radius: 30px; text-align: center; margin-top: 2.5rem; transition: all 0.3s; }
-    .btn-book:hover { background: var(--lavender-dark); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(91,77,150,0.2); }
+    .btn-book { display: block; background: var(--lavender); color: #fff; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; padding: 1.1rem 2.8rem; border-radius: 50px; text-align: center; margin-top: 2.5rem; transition: all 0.3s; }
+    .btn-book:hover { background: var(--lavender-mid); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(107,85,120,0.22); }
 
     footer { background: var(--lavender-dark); color: var(--cream); padding: 4rem 4rem 2.5rem; }
-    .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 4rem; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(213,202,240,0.1); }
-    .footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 400; letter-spacing: 0.08em; margin-bottom: 0.9rem; }
-    .footer-tagline { font-size: 0.8rem; font-weight: 300; line-height: 1.85; color: rgba(250,246,240,0.4); max-width: 250px; margin-bottom: 1.8rem; }
+    .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 4rem; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(204,196,217,0.1); }
+    .footer-brand { font-family: 'The Seasons', 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 400; letter-spacing: 0.08em; margin-bottom: 0.9rem; }
+    .footer-tagline { font-size: 0.8rem; font-weight: 300; line-height: 1.85; color: rgba(247,243,235,0.4); max-width: 250px; margin-bottom: 1.8rem; }
     .footer-col-title { font-size: 0.64rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--lavender); margin-bottom: 1.4rem; }
     .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
-    .footer-links a { font-size: 0.82rem; font-weight: 300; color: rgba(250,246,240,0.45); text-decoration: none; transition: color 0.3s; }
+    .footer-links a { font-size: 0.82rem; font-weight: 300; color: rgba(247,243,235,0.45); text-decoration: none; transition: color 0.3s; }
     .footer-links a:hover { color: var(--lavender-light); }
     .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
-    .footer-bottom p { font-size: 0.72rem; font-weight: 300; color: rgba(250,246,240,0.25); }
+    .footer-bottom p { font-size: 0.72rem; font-weight: 300; color: rgba(247,243,235,0.25); }
 
+    body::after {
+      content: ''; position: fixed; inset: 0;
+      pointer-events: none; z-index: 9999;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-repeat: repeat; background-size: 250px 250px;
+      opacity: 0.055; mix-blend-mode: multiply;
+    }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     .hero-anim { animation: fadeUp 0.8s ease both; }
 
@@ -102,7 +109,7 @@
     @media (max-width: 640px) {
       .nav-links { display: none; }
       .nav-toggle { display: flex; }
-      .nav-links.open { display: flex; flex-direction: column; position: fixed; top: 70px; left: 0; right: 0; background: var(--cream); padding: 2rem; gap: 1.5rem; border-bottom: 1px solid rgba(179,163,220,0.2); z-index: 99; }
+      .nav-links.open { display: flex; flex-direction: column; position: fixed; top: 70px; left: 0; right: 0; background: var(--cream); padding: 2rem; gap: 1.5rem; border-bottom: 1px solid rgba(159,134,170,0.2); z-index: 99; }
       .detail-content { padding: 4rem 1.5rem; }
       footer { padding: 2.5rem 1.5rem 1.5rem; }
     }
@@ -111,7 +118,30 @@
 <body>
 
   <nav>
-    <a class="nav-logo" href="index.html">The Art of Massage Therapy</a>
+    <a class="nav-logo" href="index.html" aria-label="Massage 4 Stress — Home">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="52" height="52" aria-hidden="true">
+        <defs>
+          <path id="top-arc-pb" d="M60,60m-46,0a46,46,0,1,1,92,0"/>
+          <path id="bot-arc-pb" d="M60,60m-40,0a40,40,0,0,0,80,0"/>
+        </defs>
+        <circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" stroke-width="0.75"/>
+        <circle cx="60" cy="60" r="52" fill="none" stroke="currentColor" stroke-width="0.3"/>
+        <text font-size="9" letter-spacing="3" fill="currentColor" font-family="Cormorant Garamond,serif"><textPath href="#top-arc-pb" startOffset="3%">MASSAGE 4 STRESS</textPath></text>
+        <text font-size="6.5" letter-spacing="2" fill="currentColor" font-family="Cormorant Garamond,serif"><textPath href="#bot-arc-pb" startOffset="4%">relax · renew · restore</textPath></text>
+        <g fill="currentColor">
+          <line x1="60" y1="93" x2="60" y2="51" stroke="currentColor" stroke-width="0.8" stroke-linecap="round"/>
+          <ellipse cx="60" cy="49.5" rx="3" ry="5"/>
+          <ellipse cx="55" cy="56" rx="2.3" ry="4.2" transform="rotate(-25,55,56)"/>
+          <ellipse cx="65" cy="56" rx="2.3" ry="4.2" transform="rotate(25,65,56)"/>
+          <ellipse cx="54" cy="64" rx="2.2" ry="3.8" transform="rotate(-30,54,64)"/>
+          <ellipse cx="66" cy="64" rx="2.2" ry="3.8" transform="rotate(30,66,64)"/>
+          <ellipse cx="54" cy="72" rx="2" ry="3.3" transform="rotate(-35,54,72)"/>
+          <ellipse cx="66" cy="72" rx="2" ry="3.3" transform="rotate(35,66,72)"/>
+          <path d="M60,82Q52,84,50,90" stroke="currentColor" stroke-width="0.75" fill="none" stroke-linecap="round"/>
+          <path d="M60,82Q68,84,70,90" stroke="currentColor" stroke-width="0.75" fill="none" stroke-linecap="round"/>
+        </g>
+      </svg>
+    </a>
     <button class="nav-toggle" aria-label="Toggle menu" onclick="this.nextElementSibling.classList.toggle('open')">
       <span></span><span></span><span></span>
     </button>
@@ -120,7 +150,7 @@
       <li><a href="index.html#services">Services</a></li>
       <li><a href="index.html#about">About Me</a></li>
       <li><a href="#">New Location</a></li>
-      <li><a href="https://pocketsuite.io/book/liza-abreu?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGn9ojGhDi2l3UCpTbaMQq3MhtSY20o3d_Rte078w28RCL1CBgm6DxskX6heYI_aem_Agdpu3Q1hRmB8BGWy8WdqA" class="btn-nav">Book Here</a></li>
+      <li><a href="https://pocketsuite.io/book/liza-abreu/items" class="btn-nav">Book Here</a></li>
     </ul>
   </nav>
 
@@ -179,7 +209,7 @@
           </div>
         </div>
 
-        <a href="https://pocketsuite.io/book/liza-abreu?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGn9ojGhDi2l3UCpTbaMQq3MhtSY20o3d_Rte078w28RCL1CBgm6DxskX6heYI_aem_Agdpu3Q1hRmB8BGWy8WdqA" class="btn-book">Book This Session</a>
+        <a href="https://pocketsuite.io/book/liza-abreu/items" class="btn-book">Book This Session</a>
       </div>
     </div>
   </section>
@@ -196,7 +226,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="index.html#services">Services</a></li>
           <li><a href="index.html#about">About Me</a></li>
-          <li><a href="https://pocketsuite.io/book/liza-abreu?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGn9ojGhDi2l3UCpTbaMQq3MhtSY20o3d_Rte078w28RCL1CBgm6DxskX6heYI_aem_Agdpu3Q1hRmB8BGWy8WdqA">Book Now</a></li>
+          <li><a href="https://pocketsuite.io/book/liza-abreu/items">Book Now</a></li>
         </ul>
       </div>
       <div>
